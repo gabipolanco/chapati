@@ -21,6 +21,7 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+require("./configs/session")(app)
 
 // Express View engine setup
 
@@ -39,13 +40,13 @@ app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
 
 // default value for title local
-app.locals.title = 'Express - Generated with IronGenerator';
+app.locals.title = 'Chapati - Delta';
 
 const index = require('./routes/index');
 app.use('/', index);
 
-// const auth = require('./routes/auth')
-// app.use('/auth', auth)
+const auth = require('./routes/auth')
+app.use('/auth', auth)
 
 
 module.exports = app;

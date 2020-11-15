@@ -5,3 +5,6 @@ const {signUpBackpackerView,signUpHostView}= require('../controllers/auth')
 
 router.get('/signuphost', signUpHostView)
 router.get('/signupbackpacker', signUpBackpackerView)
+
+
+module.exports= router;

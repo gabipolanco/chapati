@@ -10,7 +10,8 @@ module.exports = app => {
                 mongooseConnection: mongoose.connection
             }),
             resave: true,
-            saveUninitialized: true
+            saveUninitialized: true,
+            cookie: { maxAge: 14 * 24 * 60 * 60 * 1000 }
         })
     )
 }

@@ -1,23 +1,29 @@
-const {Schema,model}= require('mongoose')
+const { Schema, model } = require('mongoose')
 const userSchema = new Schema({
-  name: String,
-  password: String,
-  email: String,
-  role: {
-    type: String,
-    enum: ['viajero', 'host']
-    }, 
-  volunteeringId:{ 
-     type: [Schema.Types.ObjectId], 
-     ref: 'Volunteering'
+    name: String,
+    password: String,
+    email: String,
+    googleId: String,
+    facebookId: String,
+    role: {
+        type: String,
+        enum: ['viajero', 'host'],
+        default: 'viajero'
     },
-  productId: {
-    type: [Schema.Types.ObjectId],
-    ref:'Product'
-  }
+    volunteeringId: {
+        type: [Schema.Types.ObjectId],
+        ref: 'Volunteering'
+    },
+    productId: {
+        type: [Schema.Types.ObjectId],
+        ref: 'Product'
+    },
+    placeId: {
+        type: Schema.Types.ObjectId,
+        ref: 'Place'
+    }
 }, {
-  timestamps: true
+    timestamps: true
 })
 
-module.exports= model('User', userSchema)
-
+module.exports = model('User', userSchema)

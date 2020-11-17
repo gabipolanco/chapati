@@ -19,8 +19,8 @@ const userSchema = new Schema({
         ref: 'Product'
     }],
     cart: [{
-        type: Schema.Types.ObjectId,
-        ref: 'Product'
+        name: String,
+        price: String
     }],
     placeId: {
         type: Schema.Types.ObjectId,

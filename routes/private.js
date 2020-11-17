@@ -21,7 +21,8 @@ const {
     ProfileView,
     myVolunteeringsView,
     myCartView,
-    addProductToCart
+    addProductToCart,
+    deleteProductFromCart
 } = require('../controllers/private')
 
 // HOST pages
@@ -46,6 +47,8 @@ router.get('/myvolunteerings', isAuth, myVolunteeringsView)
 
 router.get('/mycart', isAuth, myCartView)
 router.get('/store/:id/add', isAuth, addProductToCart)
+router.get('/store/:id/delete', isAuth, deleteProductFromCart)
+
 
 
 module.exports = router;

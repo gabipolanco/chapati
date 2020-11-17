@@ -1,16 +1,28 @@
-<div class="container">
+<div class="container  inner-page" id="carrito">
 
-  <h2>Cart</h2>
+  <h2>Mis artículos:</h2>
+
+  <div id="cart-products">
+    <h3>Artículo</h3>
+    <h3>Precio</h3>
+    <h3>Cantidad</h3>
+  </div>
 
   {{#each cart}}
   <div class="cart-prod">
-    <h3 class="cart-prod-name">{{name}}</h3>
-    <p class="cart-prod-price">$ <span>{{price}}</span></p>
+    <div><h3 class="cart-prod-name">{{name}}</h3></div>
+    <div><p class="cart-prod-price">$ <span>{{price}}</span></p></div>
+    <div><input class="qty" name="qty" type="number" min="1" placeholder="1"></div>
+    <div><a href="/private/store/{{_id}}/delete"><img height="25" src="https://cdn3.iconfinder.com/data/icons/linecons-free-vector-icons-pack/32/trash-512.png" alt=""></a></div> 
   </div>
 
   {{/each}}
   <div class="cart-total">
-    <h4>Total: $<span id="total-cart"></span></h4>
+    <h4>Total: $<span id="total-cart">0</span></h4>
+  </div>
+
+  <div>
+    <a href="/store">Comprar otros artículos</a>
   </div>
 
 </div>

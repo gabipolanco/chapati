@@ -1,11 +1,23 @@
-<h2>Store</h2>
-
-{{#each products}}
-  <div class="product-container">
-    <img src="{{picture}}" alt="{{name}}" height="100" width="auto">
-    <h3>{{name}}</h3>
-    <p>{{description}}</p>
-    <p class="price">${{price}}</p>
-    <a href="private/store/{{_id}}/add"><button>Agregar al carrito</button></a>
+  <section id='store-header'>
+    <h2>TIENDA CONSCIENTE</h2>
+    <p>Productos artesanales de productores locales</p>
+  </section>
+  <div id='content'>
+    <section class='mainContent'>
+      <div class='productRow'>
+        {{#each products}}
+          <article class='productInfo'> 
+            <div><img alt='{{name}}' src='{{picture}}'></div>
+            <p class='price'>${{price}}</p>
+            <p class="productName">{{name}}</p>
+            <p class='productContent'>{{description}}</p>
+            <form action="private/store/{{_id}}/add" method="GET">
+            <button type='submit' class='buyButton'>Agregar al carrito</button>
+            </form>
+          </article>
+        {{/each}}
+      </div>
+      
+    </section>
   </div>
-{{/each}}
+</div>

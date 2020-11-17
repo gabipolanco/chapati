@@ -1,12 +1,25 @@
-<h2>Edit place {{name}}</h2>
+<div class="container inner-page">
 
-<form action="/private/place/{{_id}}/edit" method="POST" enctype="multipart/form-data">
-  <input type="text" name="user" value="{{ownerId}}" hidden>
-  <label for="name">Name:
-    <input type="text" name="name" id="name" value="{{name}}">
-  </label>
-  <label for="image">Image:
-    <input type="file" name="image" id="image">
-  </label>
-  <input type="submit" value="Edit place">
-</form>
+  <h2>Editá tu lugar: {{name}}</h2>
+  <div class="product-content-edit">
+
+        <img height="200px" src="{{image}}" alt="{{name}}">
+
+
+    <form action="/private/place/{{_id}}/edit" method="POST" enctype="multipart/form-data">
+      <div class="form-group">
+      <input type="text" name="user" value="{{ownerId}}" hidden>
+      <label for="name">Name:</label>
+      <input type="text" name="name" id="name" value="{{name}}"> 
+      </div>
+
+      <div class="form-group">
+      <label for="image">Image:</label>
+        <input class="form-control" type="file" name="image" id="image">
+      
+      </div>
+
+      <input class="btn btn-primary" type="submit" value="Editar">
+    </form>
+  </div>
+</div>

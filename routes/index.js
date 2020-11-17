@@ -5,8 +5,6 @@ const {
     homeView,
     storeView,
     placesView,
-    chapatiGalleryView,
-    peopleGalleryView,
     contactView
 } = require('../controllers/index')
 
@@ -14,10 +12,6 @@ const {
 router.get('/', homeView)
 router.get('/home', homeView)
 
-// Galleries
-
-router.get('/chapatigallery', chapatiGalleryView)
-router.get('/peoplegallery', peopleGalleryView)
 
 // Store
 

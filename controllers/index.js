@@ -7,22 +7,11 @@ exports.homeView = (req, res, next) => {
     res.render('index');
 }
 
-// GALLERIES
-
-exports.chapatiGalleryView = (req, res, next) => {
-    res.render('public/houseGallery');
-}
-
-exports.peopleGalleryView = (req, res, next) => {
-    res.render('public/peopleGallery');
-}
-
 // STORE
 
 exports.storeView = async(req, res, next) => {
     try {
         const products = await Product.find()
-        console.log(products)
         res.render('public/store', { products });
     } catch (err) {
         console.log(err)

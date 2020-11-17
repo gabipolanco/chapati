@@ -1,23 +1,45 @@
-<h2>My Place</h2>
+<div class="container inner-page">
 
-{{#with placeId}}
-  <img src="{{this.image}}" alt="{{this.name}}" height="100" width="auto">
-  <h3>{{this.name}}</h3>
-  <a href="/private/place/{{this._id}}/edit"><button>Edit</button></a>
-  <form action="/private/place/{{this._id}}/delete" method="POST"><button type="submit">Delete place</button></form> 
-{{/with}}
+<h2>Mi Lugar</h2>
+
+<div id='content'>
+    <section class='mainContent'>
+      <div class='productRow'>
+        {{#with placeId}}
+        <article class='myplace'>
+          <div><img src="{{this.image}}" alt="{{this.name}}" height="100" width="auto"></div>
+          <h3>{{this.name}}</h3>
+          <a href="/private/place/{{this._id}}/edit"><button class="editButton">Edit</button></a>
+          <form action="/private/place/{{this._id}}/delete" method="POST">
+          <button class="deleteButton" type="submit">Delete place</button>
+          </form> 
+        </article>
+        {{/with}}
+      </div>      
+    </section>
+  </div>
 
 {{#unless placeId}}
 
-<form action="/private/createplace" method="POST" enctype="multipart/form-data">
-  <input type="text" name="user" value="{{_id}}" hidden>
-  <label for="name">Name:
-    <input type="text" name="name" id="name">
-  </label>
-  <label for="image">Image:
-    <input type="file" name="image" id="image">
-  </label>
-  <input type="submit" value="Create place">
-</form>
+<div class="product-content-edit">
+    <img src="{{picture}}" alt="">
+
+    <form action="/private/createplace" method="POST" enctype="multipart/form-data">
+      <div class="form-group">
+      <input type="text" name="user" value="{{_id}}" hidden>
+      <label for="name">Name:</label>
+      <input type="text" name="name" id="name" value="{{name}}"> 
+      </div>
+
+      <div class="form-group">
+      <label for="image">Image:</label>
+        <input class="form-control" type="file" name="image" id="image">
+      
+      </div>
+      <input class="btn btn-primary" type="submit" value="Crear mi lugar">
+    </form>
+  </div>
 
 {{/unless}}
+
+</div>

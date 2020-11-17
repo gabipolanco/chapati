@@ -41,9 +41,15 @@ exports.editProductView = async(req, res) => {
 exports.editProduct = async(req, res) => {
     try {
         const { id } = req.params
-        const { user, name, price, description } = req.body
-        await Product.findByIdAndUpdate(id, { picture: req.file.path, name, description, price }, { new: false })
-        res.redirect('/private/myproducts')
+        const { name, price, description } = req.body
+        if (req.file) {
+            const picture = req.file.path
+            await Product.findByIdAndUpdate(id, { picture, name, description, price }, { new: false })
+            res.redirect('/private/myproducts')
+        } else {
+            await Product.findByIdAndUpdate(id, { name, description, price }, { new: false })
+            res.redirect('/private/myproducts')
+        }
     } catch (err) {
         console.log(err)
     }
@@ -96,8 +102,15 @@ exports.editPlace = async(req, res) => {
     try {
         const { id } = req.params
         const { name, user } = req.body
-        await Place.findByIdAndUpdate(id, { name, image: req.file.path, ownerId: user }, { new: false })
-        res.redirect('/private/myplace')
+        if (req.file) {
+            const image = req.file.path
+            await Place.findByIdAndUpdate(id, { name, image, ownerId: user }, { new: false })
+            res.redirect('/private/myplace')
+        } else {
+            await Place.findByIdAndUpdate(id, { name, ownerId: user }, { new: false })
+            res.redirect('/private/myplace')
+        }
+
     } catch (err) {
         console.log(err)
     }
@@ -117,8 +130,17 @@ exports.deletePlace = async(req, res) => {
 
 // Profile
 
-exports.ProfileView = (req, res, next) => {
-    res.render('private/profile')
+exports.ProfileView = async(req, res, next) => {
+    try {
+        const userId = req.user
+        const user = await User.findById(userId)
+        if (user.role === 'host') {
+            return res.render('private/hostprofile', user)
+        }
+        res.render('private/viajeroprofile', user)
+    } catch (err) {
+        console.log(err)
+    }
 }
 
 // My volunteerings
@@ -130,8 +152,7 @@ exports.myVolunteeringsView = (req, res, next) => {
 // My cart
 
 exports.myCartView = async(req, res, next) => {
-    const user = await User.findById(req.user).populate('cart')
-    console.log(user.cart)
+    const user = await User.findById(req.user)
     res.render('private/checkout', user)
 }
 
@@ -139,8 +160,20 @@ exports.addProductToCart = async(req, res) => {
     try {
         const { id } = req.params
         const userId = req.user
-        await User.findByIdAndUpdate(userId, { $push: { cart: id } })
+        const { name, price } = await Product.findById(id)
+        await User.findByIdAndUpdate(userId, { $push: { cart: { name, price } } })
         res.redirect('/store')
+    } catch (err) {
+        console.log(err)
+    }
+}
+
+exports.deleteProductFromCart = async(req, res) => {
+    try {
+        const { id } = req.params
+        const userId = req.user
+        await User.findByIdAndUpdate(userId, { $pull: { cart: { _id: id } } })
+        res.redirect('/private/mycart')
     } catch (err) {
         console.log(err)
     }

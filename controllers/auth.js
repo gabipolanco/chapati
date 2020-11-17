@@ -61,7 +61,9 @@ exports.googleCb = passport.authenticate("google", {
     failureFlash: true
 })
 
-exports.facebookInit = passport.authenticate('facebook')
+exports.facebookInit = passport.authenticate('facebook', {
+    scope: ["email"]
+})
 
 exports.facebookCb = passport.authenticate("facebook", {
     successRedirect: "/",

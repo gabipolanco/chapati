@@ -82,7 +82,7 @@ passport.use(
                 if (user) {
                     return done(null, user)
                 }
-
+                console.log(profile)
                 const newUser = await User.create({
                     facebookId: profile.id,
                     // email: profile.emails[0].value

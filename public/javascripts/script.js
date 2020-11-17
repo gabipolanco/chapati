@@ -5,18 +5,27 @@ document.addEventListener('DOMContentLoaded', () => {
     const $loginPopUp = document.querySelector('#login-pop-up')
     const $loginBtn = document.querySelector('#login-btn')
 
-    $loginBtn.onclick = (e) => {
-        e.preventDefault()
-        if ($loginPopUp.style.display === 'none') {
-            return $loginPopUp.style.display = 'flex'
-        } else {
-            return $loginPopUp.style.display = 'none'
+    if ($loginBtn) {
+        $loginBtn.onclick = (event) => {
+            event.preventDefault()
+            if ($loginPopUp.style.display === 'flex') {
+                return $loginPopUp.style.display = 'none'
+            } else {
+                return $loginPopUp.style.display = 'flex'
+            }
         }
     }
-
     // ======================== Cart ==============================
 
-    const $prodPrice = document.querySelectorAll('.cart-prod-price span').innerHTML
-    const $totalPrice = document.querySelector('#total-cart')
+    // const $prodPrice = document.querySelectorAll('.cart-prod-price span')
+    // const $totalPrice = document.querySelector('#total-cart')
+    // const allPrices = []
+    // $prodPrice.forEach((e) => {
+    //     allPrices.push(parseInt(e.innerHTML))
+    // })
+
+    // const totalPrice = allPrices.reduce((acc, curr) => { return acc + curr }, 0)
+
+    // $totalPrice.innerHTML = totalPrice
 
 }, false);

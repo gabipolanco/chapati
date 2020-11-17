@@ -82,7 +82,7 @@ Resources
 }
 
 .navbar-light .navbar-brand {
-  color: #fff;
+  color: #899f4A;
   font-size: 25px;
   text-transform: uppercase;
   font-weight: bold;
@@ -90,15 +90,15 @@ Resources
 }
 
 .navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show > .nav-link {
-  color: #fff;
+  color: #899f4A;
 }
 
 .navbar-light .navbar-nav .nav-link {
-  color: #fff;
+  color: #899f4A;
 }
 
 .navbar-toggler {
-  background: #fff;
+  background: #899f4A;
 }
 
 .navbar-nav {
@@ -123,4 +123,87 @@ Resources
   color: #fff;
 }
 
+/* PROJECT */
 
+#project{
+  background-color:#d3a83E;
+}
+.basic-1 {
+padding-top: 6.5rem;
+padding-bottom: 3rem;
+}
+
+.basic-1 .text-container {
+margin-bottom: 3rem;
+}
+
+.basic-1 .section-title {
+margin-bottom: 0.5rem;
+}
+
+.basic-1 h2 {
+margin-bottom: 1.375rem;
+
+}
+
+/* Hover Animation */
+.basic-1 .image-container {
+overflow: hidden;
+border-radius: 0.25rem;
+}
+
+.basic-1 .image-container img {
+margin: 0;
+border-radius: 0.25rem;
+transition: all 0.3s;
+}
+
+.basic-1 .image-container:hover img {
+-moz-transform: scale(1.15);
+-webkit-transform: scale(1.15);
+transform: scale(1.15);
+} 
+
+#login-pop-up {
+display: none;
+position: absolute;
+right: 100px;
+top: 100px;
+width: 500px;
+height: 400px;
+flex-direction: column;
+justify-content: space-evenly;
+align-items: center;
+background-color: rgba(0, 0, 0, 0.8);
+color: white;
+opacity: .9;
+z-index: 4;
+}
+#login-pop-up label {
+width: 100%;
+}
+#login-pop-up p {
+display: block;
+width: 100%;
+text-align: center;
+}
+/*===================== Cart =====================*/
+.cart-prod {
+width: 100%;
+background-color: gray;
+margin: 15px 0;
+padding: 10px;
+}
+.cart-prod-name {
+display: inline-block;
+}
+.cart-prod-price {
+display: inline-block;
+}
+.cart-total {
+width: 100%;
+background-color: green;
+margin: 15px 0;
+padding: 10px;
+text-align: right;
+}

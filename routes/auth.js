@@ -2,9 +2,8 @@ const express = require('express');
 const router = express.Router();
 const {
     signUpHostView,
-    signUpHostProcess,
+    signUpProcess,
     signUpBackpackerView,
-    signUpBackpackerProcess,
     loginProcess,
     logoutProcess,
     googleInit,
@@ -15,9 +14,8 @@ const {
 
 
 router.get('/signuphost', signUpHostView)
-router.post('/signuphost', signUpHostProcess)
 router.get('/signupbackpacker', signUpBackpackerView)
-router.post('/signupbackpacker', signUpBackpackerProcess)
+router.post('/signup', signUpProcess)
 router.post('/login', loginProcess)
 router.get('/logout', logoutProcess)
 

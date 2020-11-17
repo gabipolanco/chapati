@@ -9,9 +9,21 @@
 </head>
 <body>
 
+  <a href="/">Home</a>
+  <a href="/places">Places</a>
+  <a href="/store">Store</a>
+  <a href="/contact">Contact</a>
+  <a href="/chapatigallery">Chapati Gallery</a>
+  <a href="/peoplegallery">People Gallery</a>
+
+  {{#if user}}
+  <a href="/private/profile">Profile</a>
+  <a href="/private/mycart">My cart</a>
+  <a href="/auth/logout">Log out</a>
+  {{else}}
   <a href="/auth/signupbackpacker">Sign up backpacker</a>
   <a href="/auth/signuphost">Sign up host</a>
-  <a href="/auth/logout">Log out</a>
+  {{/if}}
 
   {{{body}}}
 

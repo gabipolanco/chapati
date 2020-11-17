@@ -1,6 +1,6 @@
 <h1>Signup</h1>
 
-<form action="/auth/signupbackpacker" method="post">
+<form action="/auth/signup" method="post">
   <label for="email">Email:
     <input type="email" name="email" id="email">
   </label>
@@ -8,14 +8,18 @@
   <label for="password">Password:
     <input type="password" name="password" id="password">
   </label>
+  <input type="text" name="role" id="role" value="{{role}}" hidden>
   <br>
   {{#if errorMessage}}
   <div class="error-message">{{errorMessage}}</div>
   {{/if}}
-  <button type="submit">Signup as a backpacker</button>
+  <button type="submit">Signup as {{role}}</button>
 
    <p> - or -</p>
+
   <a href="/auth/google">Signup With Google</a>
   <a href="/auth/facebook">Signup With Facebook</a>
+
+  
 
 </form>

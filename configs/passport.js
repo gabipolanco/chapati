@@ -51,7 +51,7 @@ passport.use(
         },
         async(_, __, profile, done) => {
             try {
-                const user = await User.findOne({ googleID: profile.id })
+                const user = await User.findOne({ googleId: profile.id })
 
                 if (user) {
                     return done(null, user)

@@ -1,0 +1,23 @@
+<h2>My Place</h2>
+
+{{#with placeId}}
+  <img src="{{this.image}}" alt="{{this.name}}" height="100" width="auto">
+  <h3>{{this.name}}</h3>
+  <a href="/private/place/{{this._id}}/edit"><button>Edit</button></a>
+  <form action="/private/place/{{this._id}}/delete" method="POST"><button type="submit">Delete place</button></form> 
+{{/with}}
+
+{{#unless placeId}}
+
+<form action="/private/createplace" method="POST" enctype="multipart/form-data">
+  <input type="text" name="user" value="{{_id}}" hidden>
+  <label for="name">Name:
+    <input type="text" name="name" id="name">
+  </label>
+  <label for="image">Image:
+    <input type="file" name="image" id="image">
+  </label>
+  <input type="submit" value="Create place">
+</form>
+
+{{/unless}}

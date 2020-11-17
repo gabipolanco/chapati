@@ -10,14 +10,14 @@ const userSchema = new Schema({
         enum: ['viajero', 'host'],
         default: 'viajero'
     },
-    volunteeringId: {
-        type: [Schema.Types.ObjectId],
+    volunteeringId: [{
+        type: Schema.Types.ObjectId,
         ref: 'Volunteering'
-    },
-    productId: {
-        type: [Schema.Types.ObjectId],
+    }],
+    productId: [{
+        type: Schema.Types.ObjectId,
         ref: 'Product'
-    },
+    }],
     placeId: {
         type: Schema.Types.ObjectId,
         ref: 'Place'

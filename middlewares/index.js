@@ -13,3 +13,8 @@ exports.checkRoles = roles => (req, res, next) => {
         res.redirect("/")
     }
 }
+
+exports.bindUserToViewLocals = (req, res, next) => {
+    res.locals.user = req.user;
+    next();
+}

@@ -1,0 +1,29 @@
+<h2>My products</h2>
+
+{{#each productId}}
+  <img src="{{picture}}" alt="{{name}}" height="100" width="auto">
+  <h3>{{name}}</h3>
+  <p>{{description}}</p>
+  <p>${{price}}</p>
+   <a href="/private/product/{{_id}}/edit"><button>Edit</button></a>
+   <form action="/private/product/{{_id}}/delete" method="POST">
+      <button type="submit">Delete</button>
+   </form>
+{{/each}}
+
+<form action="/private/createproduct" method="POST" enctype="multipart/form-data">
+  <input type="text" name="user" value="{{_id}}" hidden>
+  <label for="name">Name:
+    <input type="text" name="name" id="name">
+  </label>
+  <label for="price">Price:
+    <input type="number" name="price" id="price">
+  </label>
+  <label for="image">Image:
+    <input type="file" name="image" id="image">
+  </label>
+  <label for="description">Description:
+    <textarea type="text" name="description" id="description"></textarea>
+  </label>
+  <input type="submit" value="Create">
+</form>

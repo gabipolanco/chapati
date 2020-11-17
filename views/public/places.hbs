@@ -1,0 +1,9 @@
+<h2>Places</h2>
+
+{{#each places}}
+  <div>
+    <img src="{{image}}" alt="{{name}}" height="100" width="auto">
+    <h3>{{name}}</h3>
+    <a href="/places/{{_id}}"><button>Reservar voluntariado</button></a>
+  </div>
+{{/each}}

@@ -1,0 +1,18 @@
+<h2>Edit product {{name}}</h2>
+
+<form action="/private/product/{{_id}}/edit" method="POST" enctype="multipart/form-data">
+  <input type="text" name="user" value="{{_id}}" hidden>
+  <label for="name">Name:
+    <input type="text" name="name" id="name" value="{{name}}">
+  </label>
+  <label for="price">Price:
+    <input type="number" name="price" id="price" value="{{price}}">
+  </label>
+  <label for="image">Image:
+    <input type="file" name="image" id="image" value="{{picture}}">
+  </label>
+  <label for="description">Description:
+    <textarea type="text" name="description" id="description" value="{{description}}"></textarea>
+  </label>
+  <input type="submit" value="Edit">
+</form>

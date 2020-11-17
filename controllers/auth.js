@@ -3,37 +3,38 @@ const User = require('../models/User')
 const passport = require('../configs/passport')
 
 exports.signUpHostView = (req, res, next) => {
-    res.render('auth/signUpHost')
-}
-
-exports.signUpHostProcess = (req, res, next) => {
-    res.redirect('/')
+    res.render('auth/signUp', { role: 'host' })
 }
 
 exports.signUpBackpackerView = (req, res, next) => {
-    res.render('auth/signUpBackpacker')
+    res.render('auth/signUp', { role: 'viajero' })
 }
 
-exports.signUpBackpackerProcess = async(req, res) => {
-    const { email, password } = req.body
-    if (!email || !password) {
-        return res.render("auth/signupbackpacker", {
-            errorMessage: "Indicate email and password"
+exports.signUpProcess = async(req, res) => {
+    try {
+        const { email, password, role } = req.body
+        if (!email || !password) {
+            return res.render("auth/signupbackpacker", {
+                errorMessage: "Indicate email and password"
+            })
+        }
+        const user = await User.findOne({ email })
+        if (user) {
+            return res.render("auth/signupbackpacker", {
+                errorMessage: "Error"
+            })
+        }
+        const salt = bcrypt.genSaltSync(12)
+        const hashPass = bcrypt.hashSync(password, salt)
+        await User.create({
+            email,
+            password: hashPass,
+            role
         })
+        res.redirect("/")
+    } catch (err) {
+        console.log(err)
     }
-    const user = await User.findOne({ email })
-    if (user) {
-        return res.render("auth/signupbackpacker", {
-            errorMessage: "Error"
-        })
-    }
-    const salt = bcrypt.genSaltSync(12)
-    const hashPass = bcrypt.hashSync(password, salt)
-    await User.create({
-        email,
-        password: hashPass
-    })
-    res.redirect("/")
 }
 
 exports.loginProcess = passport.authenticate("local", {
@@ -55,7 +56,7 @@ exports.googleInit = passport.authenticate("google", {
 })
 
 exports.googleCb = passport.authenticate("google", {
-    successRedirect: "/profile",
+    successRedirect: "/",
     failureRedirect: "/login",
     failureFlash: true
 })
@@ -63,7 +64,7 @@ exports.googleCb = passport.authenticate("google", {
 exports.facebookInit = passport.authenticate('facebook')
 
 exports.facebookCb = passport.authenticate("facebook", {
-    successRedirect: "/profile",
+    successRedirect: "/",
     failureRedirect: "/login",
     failureFlash: true
 })

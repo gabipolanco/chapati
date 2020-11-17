@@ -1,1 +1,16 @@
-<h2>Cart</h2>
+<div class="container">
+
+  <h2>Cart</h2>
+
+  {{#each cart}}
+  <div class="cart-prod">
+    <h3 class="cart-prod-name">{{name}}</h3>
+    <p class="cart-prod-price">$ <span>{{price}}</span></p>
+  </div>
+
+  {{/each}}
+  <div class="cart-total">
+    <h4>Total: $<span id="total-cart"></span></h4>
+  </div>
+
+</div>

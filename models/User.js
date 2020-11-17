@@ -18,6 +18,10 @@ const userSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'Product'
     }],
+    cart: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Product'
+    }],
     placeId: {
         type: Schema.Types.ObjectId,
         ref: 'Place'

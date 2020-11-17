@@ -3,7 +3,7 @@ const Product = require('../models/Product')
 const User = require('../models/User')
 const Volunteering = require('../models/Volunteering')
 
-// HOST pages
+// ===========================HOST pages============================
 
 exports.myProductsView = async(req, res, next) => {
     try {
@@ -14,6 +14,8 @@ exports.myProductsView = async(req, res, next) => {
         console.log(err)
     }
 }
+
+// CRUD product
 
 exports.createProduct = async(req, res) => {
     try {
@@ -56,6 +58,8 @@ exports.deleteProduct = async(req, res) => {
         console.log(err)
     }
 }
+
+// CRUD place
 
 exports.myPlaceView = async(req, res, next) => {
     try {
@@ -109,16 +113,35 @@ exports.deletePlace = async(req, res) => {
     }
 }
 
-// GENERAL pages
+// ======================== GENERAL pages ============================
+
+// Profile
 
 exports.ProfileView = (req, res, next) => {
     res.render('private/profile')
 }
 
+// My volunteerings
+
 exports.myVolunteeringsView = (req, res, next) => {
     res.render('private/volunteerings')
 }
 
-exports.myCartView = (req, res, next) => {
-    res.render('private/checkout')
+// My cart
+
+exports.myCartView = async(req, res, next) => {
+    const user = await User.findById(req.user).populate('cart')
+    console.log(user.cart)
+    res.render('private/checkout', user)
+}
+
+exports.addProductToCart = async(req, res) => {
+    try {
+        const { id } = req.params
+        const userId = req.user
+        await User.findByIdAndUpdate(userId, { $push: { cart: id } })
+        res.redirect('/store')
+    } catch (err) {
+        console.log(err)
+    }
 }

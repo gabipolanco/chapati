@@ -23,6 +23,7 @@ router.get('/peoplegallery', peopleGalleryView)
 
 router.get('/store', storeView)
 
+
 // Places
 
 router.get('/places', placesView)

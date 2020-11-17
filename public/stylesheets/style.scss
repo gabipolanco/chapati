@@ -1,126 +1,182 @@
+/* Navegacion */
 
 #mySidenav a {
-  position: absolute;
-  left: -100px;
-  transition: 0.3s;
-  padding: 10px;
-  width: 160px;
-  text-decoration: none;
-  font-size: 15px;
-  color: #000000;
-  border-radius: 0 5px 5px 0;
+    position: absolute;
+    left: -100px;
+    transition: 0.3s;
+    padding: 10px;
+    width: 160px;
+    text-decoration: none;
+    font-size: 15px;
+    color: #000000;
+    border-radius: 0 5px 5px 0;
 }
 
 #mySidenav a:hover {
-  left: 0;
+    left: 0;
 }
 
 #proyecto {
-  top: 180px;
-  background-color:#bb492f;
+    top: 180px;
+    background-color: #bb492f;
 }
 
 #voluntariados {
- 
-  top: 240px;
-  background-color: #d3833E;
+    top: 240px;
+    background-color: #d3833E;
 }
 
 #tienda {
-  top: 300px;
-  background-color:#fee264;
+    top: 300px;
+    background-color: #fee264;
 }
 
-
-
 .sb-link {
-  display: flex;
-  height: 50px;
-  align-content: center;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  color: #bb5555;
-  transition: background .3s;
+    display: flex;
+    height: 50px;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #bb5555;
+    transition: background .3s;
 }
 
 .sb-link:hover,
 .sb-link:focus,
 .sb-link:active {
-  background: #f7f7f7;
+    background: #f7f7f7;
 }
-View Compiled
 
-
-Resources
-
-.carousel-item {
-  height: 100vh;
-  min-height: 300px;
-  background: no-repeat center center scroll;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+View Compiled Resources .carousel-item {
+    height: 100vh;
+    min-height: 300px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
+
 .carousel-caption {
-  bottom: 270px;
+    bottom: 270px;
 }
 
 .carousel-caption h5 {
-  font-size: 45px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-top: 25px;
+    font-size: 45px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 25px;
 }
 
 .carousel-caption p {
-  width: 75%;
-  margin: auto;
-  font-size: 18px;
-  line-height: 1.9;
+    width: 75%;
+    margin: auto;
+    font-size: 18px;
+    line-height: 1.9;
 }
 
 .navbar-light .navbar-brand {
-  color: #fff;
-  font-size: 25px;
-  text-transform: uppercase;
-  font-weight: bold;
-  letter-spacing: 2px;
+    color: #fff;
+    font-size: 25px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
 }
 
-.navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show > .nav-link {
-  color: #fff;
+.navbar-light .navbar-nav .active>.nav-link,
+.navbar-light .navbar-nav .nav-link.active,
+.navbar-light .navbar-nav .nav-link.show,
+.navbar-light .navbar-nav .show>.nav-link {
+    color: #fff;
 }
 
 .navbar-light .navbar-nav .nav-link {
-  color: #fff;
+    color: #fff;
 }
 
 .navbar-toggler {
-  background: #fff;
+    background: #fff;
 }
 
 .navbar-nav {
-  text-align: center;
+    text-align: center;
 }
 
 .nav-link {
-  padding: .2rem 1rem;
+    padding: .2rem 1rem;
 }
 
-.nav-link.active,.nav-link:focus{
-  color: #fff;
+.nav-link.active,
+.nav-link:focus {
+    color: #fff;
 }
 
 .navbar-toggler {
-  padding: 1px 5px;
-  font-size: 18px;
-  line-height: 0.3;
+    padding: 1px 5px;
+    font-size: 18px;
+    line-height: 0.3;
 }
 
-.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
-  color: #fff;
+.navbar-light .navbar-nav .nav-link:focus,
+.navbar-light .navbar-nav .nav-link:hover {
+    color: #fff;
 }
 
 
+/*# sourceMappingURL=style.css.map */
+
+
+/* Login */
+
+#login-pop-up {
+    display: none;
+    position: absolute;
+    right: 100px;
+    top: 100px;
+    width: 500px;
+    height: 400px;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    opacity: .9;
+    z-index: 4;
+}
+
+#login-pop-up label {
+    width: 100%;
+}
+
+#login-pop-up p {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+
+/*===================== Cart =====================*/
+
+.cart-prod {
+    width: 100%;
+    background-color: gray;
+    margin: 15px 0;
+    padding: 10px;
+}
+
+.cart-prod-name {
+    display: inline-block;
+}
+
+.cart-prod-price {
+    display: inline-block;
+}
+
+.cart-total {
+    width: 100%;
+    background-color: green;
+    margin: 15px 0;
+    padding: 10px;
+    text-align: right;
+}

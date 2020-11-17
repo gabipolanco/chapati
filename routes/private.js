@@ -20,7 +20,8 @@ const {
     deletePlace,
     ProfileView,
     myVolunteeringsView,
-    myCartView
+    myCartView,
+    addProductToCart
 } = require('../controllers/private')
 
 // HOST pages
@@ -40,6 +41,11 @@ router.post('/place/:id/delete', isAuth, checkRoles(['host']), deletePlace)
 
 router.get('/profile', isAuth, ProfileView)
 router.get('/myvolunteerings', isAuth, myVolunteeringsView)
+
+// STORE pages
+
 router.get('/mycart', isAuth, myCartView)
+router.get('/store/:id/add', isAuth, addProductToCart)
+
 
 module.exports = router;

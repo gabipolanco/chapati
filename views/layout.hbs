@@ -15,15 +15,6 @@
 </head>
 
 <body>  
-  
-    <div style="display: none;">
-        <a href="#proyecto" id="proyecto">PROYECTO</a>
-        <a href="fundadores.html" id="fundadores">CREADORES</a>
-        <a href="#" id="voluntariados">PARTICIPA</a>
-        <a href="/store" id="tienda">TIENDA</a>
-        <a href="#" id="fotos">FOTOS</a>
-  </div>
-
 
   <nav class="navbar navbar-expand-lg navbar-light fixed-top">
     <div id="mySidenav" class="sidenav">
@@ -43,7 +34,9 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
+
           {{#if user}}
+          
           <li class="nav-item">
             <a class="nav-link" href="/private/mycart">Cart</a>
           </li>
@@ -65,7 +58,9 @@
           <li class="nav-item">
             <a id="login-btn" class="nav-link" href="#">Log In</a>
           </li>
+          
           {{/if}}
+
         </ul>
       </div>
     </div>

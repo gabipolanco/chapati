@@ -1,4 +1,8 @@
 @charset "UTF-8";
+/* Globales */
+.inner-page {
+  margin-top: 100px; }
+
 /* HOMEPAGE */
 /*===================== Sidebar Menu =====================*/
 #mySidenav a {

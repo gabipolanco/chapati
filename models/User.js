@@ -3,6 +3,10 @@ const userSchema = new Schema({
     name: String,
     password: String,
     email: String,
+    image: {
+        type: String,
+        default: '../images/login.png'
+    },
     googleId: String,
     facebookId: String,
     role: {

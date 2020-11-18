@@ -3,11 +3,11 @@ const User = require('../models/User')
 const passport = require('../configs/passport')
 
 exports.signUpHostView = (req, res, next) => {
-    res.render('auth/signUp', { role: 'host' })
+    res.render('auth/signUp', { role: 'host', info2: 'Contectá con viajeros', info3: 'Comparte e intercambia' })
 }
 
 exports.signUpBackpackerView = (req, res, next) => {
-    res.render('auth/signUp', { role: 'viajero' })
+    res.render('auth/signUp', { role: 'viajero', info2: 'Contectá con comunidades', info3: 'Viaja y aprende' })
 }
 
 exports.signUpProcess = async(req, res) => {

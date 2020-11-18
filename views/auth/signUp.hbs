@@ -1,27 +1,45 @@
-<div class="container" id="sign-up">
-  <h1>Signup</h1>
+<div id="sign-up-page">
 
-  <form action="/auth/signup" method="post">
-    <label for="emailSU">Email:
-      <input type="email" name="email" id="emailSU">
-    </label>
-    <br>
-    <label for="passwordSU">Password:
-      <input type="password" name="password" id="passwordSU">
-    </label>
-    <input type="text" name="role" value="{{role}}" hidden>
-    <br>
-    {{#if errorMessage}}
-    <div class="error-message">{{errorMessage}}</div>
-    {{/if}}
-    <button type="submit">Signup as {{role}}</button>
+  <div class="banner">
+      <h3>Cómo funciona</h3>
+  </div>
 
-    <p> - or -</p>
+  <div id="signup-page-left">
+    <div class="foto1"></div>
+    <div class="container">
+      <h4><span>1.</span>Crea tu perfil</h4>
+      <h4><span>2.</span>{{info2}}</h4>
+      <h4><span>3.</span>{{info3}}</h4>
+    </div>
+    <div class="foto2"></div>
+  </div>
 
-    <a href="/auth/google">Signup With Google</a>
-    <a href="/auth/facebook">Signup With Facebook</a>
+  <div id="signup-form">
+    <div class="signup-form">
+      <h1>Unite como {{role}}</h1>
 
-    
+      <form action="/auth/signup" method="post">
+        <label for="emailSU">Email:</label>
+          <input type="email" name="email" id="emailSU">
+        <br>
+        <label for="passwordSU">Password:</label>
+          <input type="password" name="password" id="passwordSU">
+        <input type="text" name="role" value="{{role}}" hidden>
+        <br>
+        {{#if errorMessage}}
+        <div class="error-message">{{errorMessage}}</div>
+        {{/if}}
+        <button type="submit">Signup as {{role}}</button>
 
-  </form>
+        <p> - or -</p>
+          <div class="auth-social">
+            <button class="google-btn"><a href="/auth/google">Log in with Google</a></button>
+            <button class="facebook-btn"><a href="/auth/facebook">Log in with Facebook</a></button>
+          </div>
+
+        
+
+      </form>
+    </div>
+  </div>
 </div>

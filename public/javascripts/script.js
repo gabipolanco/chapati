@@ -1,9 +1,26 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // ===================== Login popup ===========================
+    // ===================== Unite menu ===========================
 
+    const $uniteMenu = document.querySelector('#unite-btn .inner-menu')
+    const $uniteBtn = document.querySelector('#unite-btn a')
     const $loginPopUp = document.querySelector('#login-pop-up')
     const $loginBtn = document.querySelector('#login-btn')
+
+    if ($uniteBtn) {
+        $uniteBtn.onclick = (event) => {
+            event.preventDefault()
+            if ($uniteMenu.style.display === 'block') {
+                return $uniteMenu.style.display = 'none'
+            } else {
+                $loginPopUp.style.display = 'none'
+                return $uniteMenu.style.display = 'block'
+            }
+        }
+    }
+
+    // ===================== Login popup ===========================
+
 
     if ($loginBtn) {
         $loginBtn.onclick = (event) => {
@@ -11,6 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if ($loginPopUp.style.display === 'flex') {
                 return $loginPopUp.style.display = 'none'
             } else {
+                $uniteMenu.style.display = 'none'
                 return $loginPopUp.style.display = 'flex'
             }
         }

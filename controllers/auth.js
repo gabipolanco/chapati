@@ -1,6 +1,7 @@
 const bcrypt = require('bcrypt')
 const User = require('../models/User')
 const passport = require('../configs/passport')
+const { emailBienvenida } = require('../configs/nodemailer')
 
 exports.signUpHostView = (req, res, next) => {
     res.render('auth/signUp', { role: 'host', info2: 'Contectá con viajeros', info3: 'Comparte e intercambia' })
@@ -31,6 +32,7 @@ exports.signUpProcess = async(req, res) => {
             password: hashPass,
             role
         })
+        await emailBienvenida( email )
         res.redirect("/")
     } catch (err) {
         console.log(err)

@@ -143,17 +143,52 @@ exports.ProfileView = async(req, res, next) => {
     }
 }
 
-// My volunteerings
+//================================= My favorites ====================
 
-exports.myVolunteeringsView = (req, res, next) => {
-    res.render('private/volunteerings')
+exports.myVolunteeringsView = async(req, res, next) => {
+    try {
+        const user = await User.findById(req.user).populate('favorites')
+        res.render('private/volunteerings', user)
+    } catch (err) {
+        console.log(err)
+    }
 }
 
-// My cart
+exports.addFavorite = async(req, res, next) => {
+    try {
+        const { id } = req.params
+        const userId = req.user
+        const { _id } = await Place.findById(id)
+        await User.findByIdAndUpdate(userId, { $push: { favorites: _id } })
+        res.redirect('/private/myvolunteerings')
+    } catch (err) {
+        console.log(err)
+    }
+
+}
+
+exports.removeFavorite = async(req, res, next) => {
+    try {
+        const { id } = req.params
+        const userId = req.user
+        const { _id } = await Place.findById(id)
+        await User.findByIdAndUpdate(userId, { $pull: { favorites: _id } })
+        res.redirect('/private/myvolunteerings')
+    } catch (err) {
+        console.log(err)
+    }
+
+}
+
+//=================================== My cart ======================
 
 exports.myCartView = async(req, res, next) => {
-    const user = await User.findById(req.user)
-    res.render('private/checkout', user)
+    try {
+        const user = await User.findById(req.user)
+        res.render('private/checkout', user)
+    } catch (err) {
+        console.log(err)
+    }
 }
 
 exports.addProductToCart = async(req, res) => {
@@ -162,7 +197,6 @@ exports.addProductToCart = async(req, res) => {
         const userId = req.user
         const { name, price } = await Product.findById(id)
         await User.findByIdAndUpdate(userId, { $push: { cart: { name, price } } })
-        res.redirect('/store')
     } catch (err) {
         console.log(err)
     }

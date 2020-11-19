@@ -14,9 +14,9 @@ const userSchema = new Schema({
         enum: ['viajero', 'host'],
         default: 'viajero'
     },
-    volunteeringId: [{
+    favorites: [{
         type: Schema.Types.ObjectId,
-        ref: 'Volunteering'
+        ref: 'Place'
     }],
     productId: [{
         type: Schema.Types.ObjectId,

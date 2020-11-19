@@ -1,11 +1,12 @@
 <div class="container inner-page">
 
-{{!--  --}}
-
   <main id="places-page">
 
   <div class="container  inner-page container-places">
-    <h2>Mi lugar</h2>
+    <div class="titulo">
+      <h2>Mi lugar</h2>
+      <a href="/private/profile">Mi perfil</a>
+    </div>
     <hr>
 
     <div class="lugares">
@@ -18,8 +19,17 @@
           <h3>{{this.name}}</h3>
           <h4 class="location">{{this.location}}</h4>
           <a href="#"><small>Ver en el mapa</small></a>
-          <p class="description">{{this.availability}}</p>
-          <p class="description">{{this.help}}</p>
+          <p class="availability"> <span>Disponibilidad:</span> 
+          {{#each this.availability}}
+          {{this}}, 
+          {{/each}}</p>
+          <p class="inExchange"><span>Que damos a cambio: </span>{{inExchange}}</p>
+          <p class="help"><span>Ayuda que necesitamos:</span> 
+          {{#each this.help}}
+           {{this}}
+          {{/each}}
+          <p class="minStay"><span>Estadia minima:</span> {{this.minStay}}</p>
+          </p>
           <p class="description">{{this.description}}</p>
         </div>
         <a href="/private/place/{{this._id}}/edit"><button class="btn-delineado">Editar lugar</button></a>

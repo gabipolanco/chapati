@@ -22,7 +22,9 @@ const {
     myVolunteeringsView,
     myCartView,
     addProductToCart,
-    deleteProductFromCart
+    deleteProductFromCart,
+    addFavorite,
+    removeFavorite
 } = require('../controllers/private')
 
 // HOST pages
@@ -41,7 +43,6 @@ router.post('/place/:id/delete', isAuth, checkRoles(['host']), deletePlace)
 // GENERAL pages
 
 router.get('/profile', isAuth, ProfileView)
-router.get('/myvolunteerings', isAuth, myVolunteeringsView)
 
 // STORE pages
 
@@ -49,6 +50,10 @@ router.get('/mycart', isAuth, myCartView)
 router.get('/store/:id/add', isAuth, addProductToCart)
 router.get('/store/:id/delete', isAuth, deleteProductFromCart)
 
+// FAVORITES page
 
+router.get('/myvolunteerings', isAuth, myVolunteeringsView)
+router.get('/favorites/:id/add', isAuth, addFavorite)
+router.get('/favorites/:id/remove', isAuth, removeFavorite)
 
 module.exports = router;

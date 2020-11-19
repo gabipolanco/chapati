@@ -1,48 +1,55 @@
-<div class="container  inner-page">
-<h2>Mis productos</h2>
+<main id="places-page" class="my-products-page">
 
-  <div id='content'>
-    <section class='mainContent'>
-      <div class='productRow'>
-        {{#each productId}}
-          <article class='myproduct'> 
-            <div><img height="150" alt='{{name}}' src='{{picture}}'></div>
-            <p class='price'>${{price}}</p>
-            <p class="productName">{{name}}</p>
-            <p class='productContent'>{{description}}</p>
-            <a href="/private/product/{{_id}}/edit"><button class='editButton'>Edit</button></a>
-            <form action="/private/product/{{_id}}/delete" method="POST">
-                <button class='deleteButton' type="submit">Delete</button>
+  <div class="container  inner-page container-places">
+    <div class="titulo">
+      <h2>Mis Productos</h2>
+      <a href="/private/profile">Mi perfil</a>
+    </div>
+    <hr>
+
+    <div class="lugares">
+    {{#each productId}}
+      <div class="place-box product-box">
+        <div class="image">
+          <img src="{{picture}}" alt="{{name}}" height="100" width="auto">
+        </div>
+        <div class="place-content">
+          <h3>{{name}}</h3>
+          <p class='price'><span>Precio: </span>${{price}} (ARS)</p>
+          <p class="description">{{description}}</p>
+        </div>
+
+        <a href="/private/product/{{_id}}/edit"><button class='btn-delineado'>Editar</button></a>
+        <form action="/private/product/{{_id}}/delete" method="POST">
+                <button class='btn-delineado deletePlace' type="submit">Borrar</button>
             </form>
-          </article>
-        {{/each}}
+
       </div>
-      
-    </section>
+      {{/each}}
+    </div>
   </div>
+</main>
 
   <div class="product-content-edit">
 
     <form action="/private/createproduct" method="POST" enctype="multipart/form-data">
       <div class="form-group">
       <input type="text" name="user" value="{{_id}}" hidden>
-      <label for="name">Name:</label>
+      <label for="name">Nombre:</label>
       <input class="form-control" type="text" name="name" id="name" value="{{name}}">    
       </div>
       <div class="form-group">
-      <label for="price">Price:</label>
+      <label for="price">Precio:</label>
       <input class="form-control" type="number" name="price" id="price" value="{{price}}">
       </div>
       <div class="form-group">
-      <label for="image">Image:</label>
+      <label for="image">Imagen:</label>
       <input class="form-control" type="file" name="image" id="image">
       </div>
       <div class="form-group">
-      <label for="description">Description:</label>
+      <label for="description">Descripción:</label>
       <textarea class="form-control" type="text" name="description" id="description" value="{{description}}"></textarea> 
       </div>
       <input class="btn btn-primary" type="submit" value="Crear nuevo producto">
     </form>
   </div>
-
-</div>

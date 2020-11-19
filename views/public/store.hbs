@@ -1,41 +1,51 @@
-  <section id='store-header'>
-    <h2>TIENDA CONSCIENTE</h2>
+<main id="places-page" class="store-page">
+
+  <div class="container  inner-page container-places">
+    <h2>Tienda consciente</h2>
     <p>Productos artesanales de productores locales</p>
-  </section>
-  <div id='content'>
-    <section class='mainContent'>
-      <div class='productRow'>
-        {{#if user}}
-        {{#each products}}
-          <article class='productInfo'> 
-            <div><img alt='{{name}}' src='{{picture}}'></div>
-            <p class='price'>${{price}}</p>
-            <p class="productName">{{name}}</p>
-            <p class='productContent'>{{description}}</p>
+    <hr>
 
-            <form action="private/store/{{_id}}/add" method="GET">
-            <button type='submit' class='buyButton'>Agregar al carrito</button>
-            </form>
-            
-          
-          </article>
-        {{/each}}
+    <div class="lugares">
+    {{#if user}}
+    {{#each products}}
+      <div class="place-box product-box">
+        <div class="image">
+          <img src="{{picture}}" alt="{{name}}" height="100" width="auto">
+        </div>
+        <div class="place-content">
+          <h3>{{name}}</h3>
+          <p class='price'><span>Precio: </span>${{price}} (ARS)</p>
+          <p class="description">{{description}}</p>
+        </div>
 
-        {{else}}
-
-        {{#each products}}
-          <article class='productInfo'> 
-            <div><img alt='{{name}}' src='{{picture}}'></div>
-            <p class='price'>${{price}}</p>
-            <p class="productName">{{name}}</p>
-            <p class='productContent'>{{description}}</p>            
-          
-          </article>
-        {{/each}}
-
-        {{/if}}
-      </div>
+        <a href="/private/store/{{_id}}/add">
+        <div class="page-wrapper">
+            <img class="addtocart" height="40" src="../images/shop.png" alt="">            
       
-    </section>
-  </div>
+        </div></a>
+
+      </div>
+      {{/each}}
+
+      {{else}}
+
+      {{#each products}}
+      <div class="place-box product-box">
+        <div class="image">
+          <img src="{{picture}}" alt="{{name}}" height="100" width="auto">
+        </div>
+        <div class="place-content">
+          <h3>{{name}}</h3>
+          <p class='price'><span>Precio: </span>${{price}} (ARS)</p>
+          <p class="description">{{description}}</p>
+        </div>
+
+        <a href="/auth/signupbackpacker"><button class="btn-delineado">Unite para comprar</button></a>   
+     
+      </div>
+      {{/each}}
+
+       {{/if}}
+
 </div>
+</main>

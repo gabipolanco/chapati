@@ -15,15 +15,24 @@
           <h3>{{name}}</h3>
           <h4 class="location">{{location}}</h4>
           <a href="#"><small>Ver en el mapa</small></a>
-          <p class="help">Tipo de ayuda que necesitamos: {{help}}</p>
-          <p class="inExchange">Que damos a cambio: {{inExchange}}</p>
-          <p class="minStay">Estadia minima: {{minStay}}</p>
-          <p class="availability">Disponibilidad: {{availability}}</p>
+          <p class="help"><span>Tipo de ayuda que necesitamos: </span> 
+          {{#each help}}
+          {{this}}
+          {{/each}}</p>
+          <p class="inExchange"><span>Que damos a cambio: </span>{{inExchange}}</p>
+          <p class="minStay"><span>Estadia minima: </span>{{minStay}}</p>
+          <p class="availability"><span>Disponibilidad: </span>
+          {{#each availability}}
+          {{this}}, 
+          {{/each}}</p>
           <p class="description">{{description}}</p>
         </div>
         
-        <a href="mailto:{{contact}}"><button class="btn-delineado">Contactar host</button></a>
-     
+        <div class="botones">
+            <a href="mailto:{{contact}}"><button class="btn-delineado">Contactar host</button></a>
+            <a data-toggle="tooltip" data-placement="left" title="Agregar a favoritos" class="favorite-btn" href="/private/favorites/{{_id}}/add"><i class="fab fa-pagelines"></i></a>
+        </div>
+
       </div>
       {{/each}}
 

@@ -1,7 +1,11 @@
-@charset "UTF-8";
 /* Globales */
 body {
-  font-family: 'Roboto', sans-serif; }
+  font-family: 'Roboto', sans-serif;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  overflow-x: hidden; }
 
 a {
   color: black; }
@@ -181,6 +185,9 @@ nav {
 
 .inner-menu .nav-item:hover {
   opacity: .8; }
+
+#profile-btn .inner-menu {
+  width: 200px; }
 
 .navbar-toggler {
   padding: 1px 5px;
@@ -367,7 +374,7 @@ h3 {
   width: 1200px;
   margin: 0 auto;
   padding-top: 10px;
-  margin: 50px auto; }
+  margin: 50px auto 10px auto; }
 
 .grid {
   background-color: white; }
@@ -584,6 +591,11 @@ h3 {
   padding-top: 50px; }
 
 /*====================== COMUNIDADES ============================ */
+#places-page .titulo {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline; }
+
 #places-page .lugares {
   display: flex;
   justify-content: space-evenly;
@@ -592,6 +604,7 @@ h3 {
 
 #places-page .lugares .place-box {
   display: flex;
+  position: relative;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -628,95 +641,114 @@ h3 {
   text-decoration: underline;
   cursor: pointer; }
 
+#places-page .lugares .place-box .place-content span {
+  font-weight: bold; }
+
 #places-page .lugares .place-box .place-content .description {
-  max-width: 480px; }
+  max-width: 480px;
+  text-align: justify; }
+
+#places-page .lugares .place-box .place-content .availability {
+  display: inline-block;
+  text-transform: capitalize; }
+
+#places-page .lugares .place-box .place-content .help {
+  text-transform: capitalize; }
 
 #places-page .lugares .place-box a {
   display: block;
   margin: 0 auto; }
 
-/*====================== STORE ============================ */
-#store-header {
-  font-family: ‘Montserrat’, sans-serif;
-  clear: both;
-  background-color: white;
-  color: black;
-  padding: 160px 0 40px 0;
-  text-align: center; }
-
-#content {
-  clear: both;
-  overflow: auto;
-  padding-top: 29px; }
-
-#content .mainContent {
+#places-page .lugares .place-box .botones {
   width: 100%;
-  text-align: center; }
-
-#content .mainContent .productRow {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
   justify-content: space-evenly;
-  color: #929292; }
-
-.mainContent .productRow .productInfo {
-  padding: 20px;
-  width: 300px;
-  height: 380px;
-  box-sizing: border-box;
-  box-shadow: 0 0 3px black;
-  transition: all .3s ease;
-  margin-bottom: 50px; }
-
-.mainContent .productRow .productInfo:hover {
-  transform: scale(1.1); }
-
-.productRow .productInfo > div {
-  height: 150px; }
-
-.productRow .productInfo > div img {
-  max-height: 100%;
-  width: auto; }
-
-.productRow .productInfo .price {
-  font-family: ‘Montserrat’, sans-serif;
-  color: #929292;
-  font-size: 22px;
-  position: relative; }
-
-.productRow .productInfo .productContent {
-  position: relative;
-  font-size: 14px;
-  font-family: source-sans-pro, sans-serif;
-  font-style: normal;
-  font-weight: 200;
-  color: #929292;
-  white-space: pre-wrap; }
-
-.productRow .productInfo form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center; }
 
-.productRow .productInfo .buyButton {
-  position: relative;
-  width: 84%;
-  background-color: #f0684c;
-  height: 50px;
-  color: white;
-  border-style: none;
-  font-size: 14px;
-  margin-top: 8px; }
+#places-page .lugares .place-box .favorite-btn {
+  font-size: 40px;
+  transition: all .3s ease; }
 
-.productInfo div img {
-  width: 100%; }
+#places-page .lugares .place-box .favorite-btn:hover {
+  opacity: .5; }
+
+/*====================== STORE ============================ */
+main.store-page {
+  min-height: 100vh; }
+
+#places-page .lugares .product-box {
+  width: 300px; }
+
+#places-page .lugares .product-box .place-content {
+  height: 40%; }
+
+#places-page .lugares .product-box .place-content h3 {
+  font-size: 20px; }
+
+#places-page .lugares .product-box .image {
+  height: 100px; }
+
+.page-wrapper {
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.cart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px; }
+  .cart i {
+    font-size: 25px;
+    color: white; }
+  .cart:before {
+    content: attr(data-totalitems);
+    font-size: 12px;
+    font-weight: 600;
+    position: absolute;
+    top: -12px;
+    right: -12px;
+    background: #899f4a;
+    line-height: 24px;
+    padding: 0 5px;
+    height: 24px;
+    min-width: 24px;
+    color: white;
+    text-align: center;
+    border-radius: 24px; }
+  .cart.shake {
+    animation: shakeCart .4s ease-in-out forwards; }
+
+@keyframes xAxis {
+  100% {
+    transform: translateX(calc(50vw - 105px)); } }
+
+@keyframes yAxis {
+  100% {
+    transform: translateY(calc(-50vh + 75px)); } }
+
+@keyframes shakeCart {
+  25% {
+    transform: translateX(6px); }
+  50% {
+    transform: translateX(-4px); }
+  75% {
+    transform: translateX(2px); }
+  100% {
+    transform: translateX(0); } }
 
 /*===================== Cart =====================*/
+.my-articles-page {
+  min-height: 100vh; }
+
+.my-articles-page h3 {
+  padding: 0; }
+
 #cart-products {
   display: flex;
   width: 100%;
+  height: 50px;
   background-color: #899f4a;
   margin: 15px 0;
   padding: 10px 30px; }
@@ -728,6 +760,7 @@ h3 {
 .cart-prod {
   display: flex;
   width: 100%;
+  height: 50px;
   background-color: #f6f6f6;
   margin: 15px 0;
   padding: 10px 30px; }
@@ -736,7 +769,8 @@ h3 {
   width: 25%; }
 
 .cart-prod-name {
-  display: inline-block; }
+  display: inline-block;
+  font-size: 20px; }
 
 .cart-prod-price {
   display: inline-block; }
@@ -746,39 +780,28 @@ h3 {
 
 .cart-total {
   width: 100%;
-  background-color: #f0684c;
+  height: 50px;
   margin: 15px 0;
   padding: 10px;
   text-align: right; }
 
+/*=================== My favorites =======================*/
+main.favorites-page {
+  min-height: 100vh; }
+
+.no-favorites {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 500px; }
+
+.no-favorites button:hover a {
+  color: white; }
+
 /*=================== My products =======================*/
-.myproduct {
-  padding: 20px;
-  width: 300px;
-  height: 480px;
-  box-sizing: border-box;
-  box-shadow: 0 0 3px black;
-  transition: all .3s ease; }
-
-.editButton {
-  position: relative;
-  width: 84%;
-  background-color: green;
-  height: 35px;
-  color: white;
-  border-style: none;
-  font-size: 14px;
-  margin-top: 8px; }
-
-.deleteButton {
-  position: relative;
-  width: 84%;
-  background-color: #f0684c;
-  height: 35px;
-  color: white;
-  border-style: none;
-  font-size: 14px;
-  margin-top: 8px; }
+.my-products-page .btn-delineado {
+  padding: 5px 10px; }
 
 /*============================ My place ==================================*/
 .myplace {
@@ -795,7 +818,7 @@ h3 {
 .deletePlace:hover {
   background-color: red; }
 
-/*============================ Edit ==================================*/
+/*============================ Edit place ========================*/
 #container-edit {
   width: 100%;
   display: flex;
@@ -808,12 +831,41 @@ h3 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 0 auto; }
+  margin: 30px auto; }
 
 .product-content-edit img {
   margin: 25px 0; }
 
 .product-content-edit input {
   width: 100%; }
+
+/*=========================== Footer ===================================*/
+#footer {
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 120px;
+  color: white;
+  text-transform: uppercase; }
+
+#footer .copyright {
+  margin-left: 50px; }
+
+#footer .redes {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-right: 50px; }
+
+#footer .redes p {
+  margin: 0 10px; }
+
+#footer .redes a {
+  color: white; }
+
+#footer .redes i {
+  font-size: 30px;
+  margin: 0 10px; }
 
 /*# sourceMappingURL=style.css.map */

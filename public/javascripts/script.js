@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const $profileBtn = document.querySelector('#profile-btn a')
     const $loginPopUp = document.querySelector('#login-pop-up')
     const $loginBtn = document.querySelector('#login-btn')
+    const $loginBtn2 = document.querySelector('#signup-login')
 
     if ($uniteBtn) {
         $uniteBtn.onclick = (event) => {
@@ -35,29 +36,61 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ===================== Login popup ===========================
 
-
-    if ($loginBtn) {
-        $loginBtn.onclick = (event) => {
-            event.preventDefault()
-            if ($loginPopUp.style.display === 'flex') {
-                return $loginPopUp.style.display = 'none'
-            } else {
-                $uniteMenu.style.display = 'none'
-                return $loginPopUp.style.display = 'flex'
-            }
+    function login(event) {
+        event.preventDefault()
+        if ($loginPopUp.style.display === 'flex') {
+            return $loginPopUp.style.display = 'none'
+        } else {
+            $uniteMenu.style.display = 'none'
+            return $loginPopUp.style.display = 'flex'
         }
     }
+
+    if ($loginBtn) {
+        $loginBtn.onclick = login
+    }
+
+    if ($loginBtn2) {
+        $loginBtn2.onclick = login
+    }
+
+    // ======================== Store ==============================
+
+    const $addProdBtn = document.querySelectorAll('.addtocart')
+
+    if ($addProdBtn) {
+        $addProdBtn.forEach(e => e.onclick = () => {
+
+            var button = $(this);
+            var cart = $('#cart');
+            var cartTotal = cart.attr('data-totalitems');
+            var newCartTotal = parseInt(cartTotal) + 1;
+
+            button.addClass('sendtocart');
+            setTimeout(function() {
+                button.removeClass('sendtocart');
+                cart.addClass('shake').attr('data-totalitems', newCartTotal);
+                setTimeout(function() {
+                    cart.removeClass('shake');
+                }, 500)
+            }, 1000)
+        })
+    }
+
     // ======================== Cart ==============================
 
-    // const $prodPrice = document.querySelectorAll('.cart-prod-price span')
-    // const $totalPrice = document.querySelector('#total-cart')
-    // const allPrices = []
-    // $prodPrice.forEach((e) => {
-    //     allPrices.push(parseInt(e.innerHTML))
-    // })
+    const $prodPrice = document.querySelectorAll('.cart-prod-price span')
+    const $totalPrice = document.querySelector('#total-cart')
+    const allPrices = []
 
-    // const totalPrice = allPrices.reduce((acc, curr) => { return acc + curr }, 0)
+    if ($totalPrice) {
+        $prodPrice.forEach((e) => {
+            allPrices.push(parseInt(e.innerHTML))
+        })
 
-    // $totalPrice.innerHTML = totalPrice
+        const totalPrice = allPrices.reduce((acc, curr) => { return acc + curr }, 0)
+
+        $totalPrice.innerHTML = totalPrice
+    }
 
 }, false);

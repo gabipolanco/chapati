@@ -12,6 +12,8 @@
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="/stylesheets/style.css" />
+  <link rel="stylesheet" href="/stylesheets/all.min.css">
+    <meta name="theme-color" content="#fafafa">
   <script>var __adobewebfontsappname__='dreamweaver'</script>
   <script src='http://use.edgefonts.net/montserrat:n4:default;source-sans-pro:n2:default.js' type='text/javascript'></script>
 </head>
@@ -41,7 +43,7 @@
           {{#if user}}
           
           <li class="nav-item">
-            <a class="nav-link" href="/private/mycart">
+            <a id="cart" class="cart nav-link" data-totalitems="0" href="/private/mycart">
               <img height="40" src="/images/shop.png" alt="">
             </a>
           </li>
@@ -65,10 +67,10 @@
             <a class="nav-link" href="#">UNITE</a>
             <ul class="inner-menu">
               <li class="nav-item active">
-                <a class="nav-link" href="/auth/signupbackpacker">Backpacker</a>
+                <a class="nav-link" href="/auth/signupbackpacker">Voluntari@</a>
               </li>
               <li class="nav-item active">
-                <a class="nav-link" href="/auth/signuphost">Comunidad</a>
+                <a class="nav-link" href="/auth/signuphost">Host</a>
               </li>
             </ul>
           </li>
@@ -109,6 +111,18 @@
 
   {{{body}}}
 
+
+<footer id="footer">
+  <div class="copyright">
+    <p>Chapati 2020 &copy;</p>
+  </div>
+  <div class="redes">
+    <p>Contactate con nosotr@s: </p>
+    <a href="tel:646-637-4077"><i class="fab fa-whatsapp"></i></a>
+    <a target="_blank" href="https://www.instagram.com/chapati.delta/"><i class="fab fa-instagram"></i></a>
+    <a target="_blank" href="mailto:chapatidelta@gmail.com"><i class="far fa-envelope"></i></a>
+  </div>
+</footer>
 
   <script src="/javascripts/script.js"></script>
 

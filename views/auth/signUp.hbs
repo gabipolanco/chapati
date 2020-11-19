@@ -20,21 +20,21 @@
 
       <form action="/auth/signup" method="post">
         <label for="emailSU">Email:</label>
-          <input type="email" name="email" id="emailSU">
+          <input placeholder="Tu email" type="email" name="email" id="emailSU">
         <br>
-        <label for="passwordSU">Password:</label>
-          <input type="password" name="password" id="passwordSU">
+        <label for="passwordSU">Contraseña:</label>
+          <input placeholder="Tu contraseña" type="password" name="password" id="passwordSU">
         <input type="text" name="role" value="{{role}}" hidden>
         <br>
         {{#if errorMessage}}
         <div class="error-message">{{errorMessage}}</div>
         {{/if}}
-        <button type="submit">Signup as {{role}}</button>
+        <button type="submit">Unite como {{role}}</button>
 
-        <p> - or -</p>
+        <p> - o -</p>
           <div class="auth-social">
-            <button class="google-btn"><a href="/auth/google">Log in with Google</a></button>
-            <button class="facebook-btn"><a href="/auth/facebook">Log in with Facebook</a></button>
+            <button class="google-btn"><a href="/auth/google">Unite con Google</a></button>
+            <button class="facebook-btn"><a href="/auth/facebook">Unite con Facebook</a></button>
           </div>
 
           <p style="cursor: pointer;" id="signup-login">Ya tenes una cuenta? Logueate</p>

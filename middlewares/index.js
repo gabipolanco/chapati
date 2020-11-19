@@ -6,6 +6,14 @@ exports.isAuth = (req, res, next) => {
     }
 }
 
+exports.isNotAuth = (req, res, next) => {
+    if (!req.isAuthenticated()) {
+        next()
+    } else {
+
+    }
+}
+
 exports.checkRoles = roles => (req, res, next) => {
     if (roles.includes(req.user.role)) {
         return next()

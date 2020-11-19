@@ -699,9 +699,6 @@ main.store-page {
   align-items: center;
   justify-content: center;
   border-radius: 5px; }
-  .cart i {
-    font-size: 25px;
-    color: white; }
   .cart:before {
     content: attr(data-totalitems);
     font-size: 12px;

@@ -866,10 +866,6 @@ main.store-page {
     align-items: center;
     justify-content: center;
     border-radius: 5px;
-    i {
-        font-size: 25px;
-        color: white;
-    }
     &:before {
         content: attr(data-totalitems);
         font-size: 12px;

@@ -1,0 +1,52 @@
+<main id="places-page" class="favorites-page">
+
+  <div class="container  inner-page container-places">
+    
+    <div class="titulo">
+      <h2>Mis comunidades favoritas</h2>
+      <a href="/private/profile">Mi perfil</a>
+    </div>
+    <hr>
+
+    <div class="lugares">
+
+      {{#unless favorites}}
+        <div class="no-favorites">
+          <h3>Todavia no tenes favoritos</h3>
+          <button class="btn-delineado"><a href="/places">Explora las comunidades</a></button>
+        </div>
+      {{/unless}}
+    
+    {{#each favorites}}
+      <div class="place-box">
+        <div class="image">
+          <img src="{{image}}" alt="{{name}}" height="100" width="auto">
+        </div>
+        <div class="place-content">
+          <h3>{{name}}</h3>
+          <h4 class="location">{{location}}</h4>
+          <a href="#"><small>Ver en el mapa</small></a>
+          <p class="help"><span>Tipo de ayuda que necesitamos: </span> 
+          {{#each help}}
+          {{this}}
+          {{/each}}</p>
+          <p class="inExchange"><span>Que damos a cambio: </span>{{inExchange}}</p>
+          <p class="minStay"><span>Estadia minima: </span>{{minStay}}</p>
+          <p class="availability"><span>Disponibilidad: </span>
+          {{#each availability}}
+          {{this}}, 
+          {{/each}}</p>
+          <p class="description">{{description}}</p>
+        </div>
+        
+        <div class="botones">
+            <a data-toggle="tooltip" data-placement="left" title="Quitar de favoritos" class="favorite-btn" href="/private/favorites/{{_id}}/remove"><i class="fas fa-trash-alt"></i></a>
+        </div>
+
+      </div>
+      {{/each}}
+
+    </div>  
+
+  </div>
+</main>

@@ -1,87 +1,175 @@
+/* Globales */
+
+body {
+    font-family: 'Roboto', sans-serif;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    overflow-x: hidden;
+}
+
+a {
+    color: black;
+}
+
+a:hover {
+    text-decoration: none;
+    color: black;
+}
+
+.inner-page {
+    margin-top: 100px;
+}
+
+.btn {
+    background-color: #fee264;
+    box-shadow: 1px 1px 2px black;
+    height: 35px;
+    color: rgba(255, 255, 255, 1.00);
+    border-style: none;
+    font-size: 14px;
+}
+
+.btn-transparent {
+    color: black;
+    background-color: rgba(255, 255, 255, 0.3);
+    border: 1px solid black;
+    width: 170px;
+    padding: 10px 0;
+    font-weight: 500;
+    font-size: 20px;
+    z-index: 4;
+}
+
+.btn-delineado {
+    background-color: transparent;
+    border: 2px solid black;
+    color: black;
+    padding: 10px 50px;
+    font-weight: 500;
+    font-size: 20px;
+    transition: all .3s ease;
+}
+
+.btn-delineado:hover {
+    background-color: black;
+    color: white;
+}
+
+.titulo-seccion {
+    font-weight: 500;
+    font-size: 40px;
+    text-transform: uppercase;
+}
+
+
+/* HOMEPAGE */
+
+
+/*===================== Sidebar Menu =====================*/
 
 #mySidenav a {
-  position: absolute;
-  left: -100px;
-  transition: 0.3s;
-  padding: 10px;
-  width: 160px;
-  text-decoration: none;
-  font-size: 15px;
-  color: #000000;
-  border-radius: 0 5px 5px 0;
+    position: absolute;
+    left: -120px;
+    transition: 0.3s;
+    padding: 10px;
+    width: 160px;
+    text-decoration: none;
+    font-size: 15px;
+    color: #000000;
+    box-shadow: 1px 1px 2px black;
+    border-radius: 0 5px 5px 0;
 }
 
 #mySidenav a:hover {
-  left: 0;
+    left: 0;
 }
 
 #proyecto {
-  top: 180px;
-  background-color:#bb492f;
+    top: 180px;
+    background-color: #AFA77B;
+}
+
+#fundadores {
+    top: 240px;
+    background-color: #ffffff;
 }
 
 #voluntariados {
- 
-  top: 240px;
-  background-color: #d3833E;
+    top: 300px;
+    background-color: #d3833E;
+}
+
+#comunidades {
+    top: 360px;
+    background-color: #899f4a;
 }
 
 #tienda {
-  top: 300px;
-  background-color:#fee264;
+    top: 420px;
+    background-color: #fee264;
+}
+
+#fotos {
+    top: 480px;
+    background-color: gray;
 }
 
 
+/*===================== Topbar Menu y Carousel =====================*/
 
 .sb-link {
-  display: flex;
-  height: 50px;
-  align-content: center;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  color: #bb5555;
-  transition: background .3s;
+    display: flex;
+    height: 50px;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #bb5555;
+    transition: all .3s ease;
 }
 
 .sb-link:hover,
 .sb-link:focus,
 .sb-link:active {
-  background: #f7f7f7;
+    background: #f7f7f7;
 }
-View Compiled
 
-
-Resources
-
-.carousel-item {
-  height: 100vh;
-  min-height: 300px;
-  background: no-repeat center center scroll;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+View Compiled Resources .carousel-item {
+    height: 100vh;
+    min-height: 300px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
+
 .carousel-caption {
-  bottom: 270px;
+    bottom: 380px;
 }
 
 .carousel-caption h5 {
-  font-size: 45px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-top: 25px;
+    font-size: 45px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 25px;
 }
 
 .carousel-caption p {
-  width: 75%;
-  margin: auto;
-  font-size: 18px;
-  line-height: 1.9;
+    width: 75%;
+    margin: auto;
+    font-size: 18px;
+    line-height: 1.9;
+}
+
+nav {
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 .navbar-light .navbar-brand {
+<<<<<<< HEAD
   color: #899f4A;
   font-size: 25px;
   text-transform: uppercase;
@@ -99,30 +187,682 @@ Resources
 
 .navbar-toggler {
   background: #899f4A;
+=======
+    color: #fff;
+    font-size: 25px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
 }
 
-.navbar-nav {
-  text-align: center;
+.navbar-light .navbar-nav .active>.nav-link,
+.navbar-light .navbar-nav .nav-link.active,
+.navbar-light .navbar-nav .nav-link.show,
+.navbar-light .navbar-nav .show>.nav-link {
+    color: #fff;
 }
 
-.nav-link {
-  padding: .2rem 1rem;
-}
-
-.nav-link.active,.nav-link:focus{
-  color: #fff;
+.navbar-light .navbar-nav .nav-link {
+    color: #fff;
 }
 
 .navbar-toggler {
-  padding: 1px 5px;
-  font-size: 18px;
-  line-height: 0.3;
+    background: #fff;
+>>>>>>> tomi
 }
 
-.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
-  color: #fff;
+.navbar-nav {
+    text-align: center;
 }
 
+.nav-link {
+    padding: .2rem 1rem;
+}
+
+.nav-link.active,
+.nav-link:focus {
+    color: #fff;
+}
+
+.nav-item {
+    position: relative;
+    list-style: none;
+    margin-right: 30px;
+}
+
+.inner-menu {
+    display: none;
+    position: absolute;
+    right: -60px;
+    background-color: #AFA77B;
+    text-align: center;
+    padding: 10px 0 10px 30px;
+    text-transform: uppercase;
+}
+
+.inner-menu .nav-item {
+    height: 40px;
+}
+
+.inner-menu .nav-item:hover {
+    opacity: .8;
+}
+
+#profile-btn .inner-menu {
+    width: 200px;
+}
+
+.navbar-toggler {
+    padding: 1px 5px;
+    font-size: 18px;
+    line-height: 0.3;
+}
+
+.navbar-light .navbar-nav .nav-link:focus,
+.navbar-light .navbar-nav .nav-link:hover {
+    color: #fff;
+}
+
+
+/*=============================== PROJECT VIEW =======================*/
+
+#project {
+    padding-top: 60px;
+    background-color: rgba($color: #AFA77B, $alpha: 0.3);
+}
+
+.section-title {
+    font-size: 5em;
+    ;
+}
+
+.basic-1 {
+    padding-top: 50px;
+}
+
+.basic-1 {
+    height: 600px;
+}
+
+.basic-1 .text-container {
+    margin-bottom: 30rem;
+}
+
+
+/* Hover Animation */
+
+.basic-1 .image-container {
+    overflow: hidden;
+    border-radius: 0.25rem;
+    padding-bottom: 0px;
+    margin-left: 15%;
+}
+
+.basic-1 .image-container img {
+    height: 450px;
+    margin: 300;
+    transition: all 0.3s;
+}
+
+.basic-1 .image-container:hover img {
+    -moz-transform: scale(1.5);
+    -webkit-transform: scale(1.15);
+    transform: scale(1.15);
+}
+
+.projectext {
+    font-size: 20px;
+    text-align: justify;
+    white-space: pre-line;
+    font-family: sans-serif;
+}
+
+
+/* columns -creators */
+
+h3 {
+    text-align: center;
+    font-size: 30px;
+    padding-top: 50px;
+}
+
+
+/*========================= Founders ==========================*/
+
+#testimonials {
+    box-sizing: border-box;
+    color: #000000;
+    padding-top: 80px;
+    padding-bottom: 200px;
+    align-items: center;
+}
+
+#founders-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#founders-container .founder {
+    position: relative;
+    width: 200px;
+    height: 300px;
+    margin: 20px;
+}
+
+#founders-container .founder-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+#founders-container .founder-img img {
+    width: auto;
+    height: 100%;
+}
+
+#founders-container .founder-name {
+    padding: 10px;
+    position: absolute;
+    bottom: 140px;
+    right: 0px;
+    border-radius: 3px;
+    box-shadow: 0 0 2px -2px black;
+    background-color: white;
+}
+
+#founders-container .founder-name p {
+    margin: 0;
+    font-weight: 500;
+}
+
+#founders-container .founder-description {
+    padding-top: 10px;
+    text-align: justify;
+}
+
+
+/*=========================== Volunteering ==============================*/
+
+#volunteerings {
+    background-color: rgb(241, 241, 241);
+    min-height: 120vh;
+    padding: 70px 0;
+}
+
+.container-voluntering {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-top: 50px;
+}
+
+.container-voluntering .card {
+    position: relative;
+    height: 450px;
+    width: 630px;
+    overflow: hidden;
+}
+
+.container-voluntering .card img {
+    height: 100%;
+    width: auto;
+}
+
+.container-voluntering .card .volunteerbutton {
+    border: 2px solid white;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    background-color: transparent;
+    border-radius: 3px;
+    padding: 10px 30px;
+    width: 255px;
+    box-sizing: border-box;
+    position: absolute;
+    top: 200px;
+    left: calc(50% - 127px);
+    transition: all .3s ease;
+}
+
+.container-voluntering .card .volunteerbutton:hover {
+    background-color: white;
+    color: black;
+}
+
+
+/*=============================== BANNER 2 =======================*/
+
+#banner2 {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 300px;
+    background-image: url("../images/banner2.jpg");
+    background-position: center -150px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#banner2 button {
+    border: 2px solid white;
+    text-transform: uppercase;
+    font-weight: bold;
+    background-color: transparent;
+    border-radius: 3px;
+    padding: 20px 30px;
+    width: 255px;
+    box-sizing: border-box;
+    transition: all .3s ease;
+}
+
+#banner2 button a {
+    color: white;
+}
+
+#banner2 button:hover {
+    background-color: white;
+}
+
+#banner2 button:hover a {
+    color: black;
+}
+
+
+/*=============================== fotos =============================*/
+
+#photos {
+    padding-top: 50px;
+}
+
+.container-photo {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    justify-items: center;
+    grid-gap: 10px;
+    width: 1200px;
+    margin: 0 auto;
+    padding-top: 10px;
+    margin: 50px auto 10px auto;
+}
+
+.grid {
+    background-color: white;
+}
+
+.pic {
+    width: 100%;
+    overflow: hidden;
+    background-color: #000;
+}
+
+.photos {
+    width: 100%;
+    height: auto;
+    transform: scale(1.15);
+    transition: transform 0.5s, opacity 0.5s;
+}
+
+.photos:hover {
+    opacity: 1;
+    transform: scale(1.03);
+}
+
+
+/*========================= SignUp ================================*/
+
+#sign-up-page {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#sign-up-page .banner {
+    width: 100%;
+    height: 500px;
+    background-image: url('../images/chicos.jpg');
+    background-position: center -150px;
+    padding-top: 170px;
+    margin-bottom: 50px;
+}
+
+#sign-up-page .banner h3 {
+    color: #AFA77B;
+    text-shadow: 1px 1px black;
+    font-size: 70px;
+    text-transform: uppercase;
+}
+
+#signup-page-left {
+    position: relative;
+    width: 50%;
+    height: 100vh;
+    padding-top: 100px;
+    // background-color: rgba(175, 167, 123, 0.3);s
+}
+
+#signup-page-left .container {
+    background-color: rgba(0, 0, 0, 0.9);
+    border-radius: 50%;
+    height: 480px;
+    width: 480px;
+    padding-top: 10px;
+}
+
+#signup-page-left .foto1,
+#signup-page-left .foto2 {
+    position: absolute;
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+}
+
+#signup-page-left .foto1 {
+    background-image: url('../images/chapati25.jpg');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    top: -10px;
+    right: -10px;
+}
+
+#signup-page-left .foto2 {
+    background-image: url('../images/chapati26.jpg');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    bottom: 10px;
+    left: 10px;
+}
+
+#signup-page-left h4 {
+    color: white;
+    text-align: center;
+    margin: 45px 0;
+}
+
+#signup-page-left span {
+    color: #AFA77B;
+    text-shadow: 1px 1px black;
+    font-size: 70px;
+}
+
+#signup-form {
+    width: 50%;
+    height: 100vh;
+    padding: 120px 0 0 200px;
+}
+
+#signup-form .signup-form {
+    width: 500px;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    opacity: .9;
+    z-index: 5;
+    padding: 60px 0;
+}
+
+#signup-form .signup-form h1 {
+    text-align: center;
+}
+
+
+/*========================= Login ================================*/
+
+#login-pop-up {
+    display: none;
+    position: fixed;
+    right: 50px;
+    top: 62.8px;
+    width: 500px;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    opacity: .9;
+    z-index: 5;
+    padding: 20px 0;
+}
+
+#login-pop-up label,
+#signup-form .signup-form label {
+    width: 100%;
+    margin: 0 8%;
+}
+
+#login-pop-up input,
+#signup-form .signup-form input {
+    width: 84%;
+    margin: 10px 8%;
+}
+
+#login-pop-up p,
+#signup-form .signup-form p {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+#login-pop-up button,
+#signup-form .signup-form button {
+    position: relative;
+    width: 84%;
+    background-color: #AFA77B;
+    height: 35px;
+    color: rgba(255, 255, 255, 1.00);
+    border-style: none;
+    font-size: 14px;
+    margin: 20px 8%;
+}
+
+#auth-social,
+#signup-form .signup-form .auth-social {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#auth-social a,
+#signup-form .signup-form .auth-social a {
+    color: white;
+}
+
+#auth-social button,
+#signup-form .signup-form .auth-social button {
+    margin: 10px;
+}
+
+.google-btn {
+    background-color: #4285f4!important;
+    border-radius: 3px;
+}
+
+.facebook-btn {
+    background-color: #3b5998!important;
+    border-radius: 3px;
+}
+
+
+/*====================== PROFILES ============================ */
+
+.perfil {
+    background-color: rgb(221, 221, 221);
+    height: 100vh;
+}
+
+.container-profile {
+    position: relative;
+    padding: 150px 50px 0 50px;
+    background-color: white;
+    box-sizing: border-box;
+    width: 1000px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.inner-page hr {
+    border: 1px solid black;
+}
+
+.inner-page h3 {
+    text-align: left;
+}
+
+.perfil .foto {
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 50px 0;
+}
+
+.perfil .foto img {
+    height: 100%;
+    width: auto;
+}
+
+.perfil .botones .btn {
+    margin: 0 10px;
+}
+
+.perfil .left {
+    display: inline-block;
+    width: 50%;
+    box-sizing: border-box;
+    float: left;
+}
+
+.perfil .right {
+    display: inline-block;
+    width: 50%;
+    box-sizing: border-box;
+    padding-top: 50px;
+}
+
+
+/*====================== COMUNIDADES ============================ */
+
+#places-page .titulo {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+#places-page .container-places {}
+
+#places-page .lugares {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#places-page .lugares .place-box {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 520px;
+    // height: 650px;
+    padding: 20px;
+    margin-bottom: 50px;
+    background-color: white;
+    border: 1px solid black;
+}
+
+#places-page .lugares .place-box .image {
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 350px;
+}
+
+#places-page .lugares .place-box .image img {
+    height: 100%;
+    width: auto;
+}
+
+#places-page .lugares .place-box .place-content {
+    max-width: 90%;
+    padding-top: 20px;
+    // overflow-y: scroll;
+}
+
+#places-page .lugares .place-box .place-content h3 {
+    padding: 0;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #899f4a;
+}
+
+#places-page .lugares .place-box .place-content .location {}
+
+#places-page .lugares .place-box .place-content small {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#places-page .lugares .place-box .place-content span {
+    font-weight: bold;
+}
+
+#places-page .lugares .place-box .place-content .description {
+    max-width: 480px;
+    text-align: justify;
+}
+
+#places-page .lugares .place-box .place-content .availability {
+    display: inline-block;
+    text-transform: capitalize;
+}
+
+#places-page .lugares .place-box .place-content .help {
+    text-transform: capitalize;
+}
+
+#places-page .lugares .place-box a {
+    display: block;
+    margin: 0 auto;
+}
+
+#places-page .lugares .place-box .botones {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#places-page .lugares .place-box .favorite-btn {
+    font-size: 40px;
+    transition: all .3s ease;
+}
+
+#places-page .lugares .place-box .favorite-btn:hover {
+    opacity: .5;
+}
+
+
+/*====================== STORE ============================ */
+
+main.store-page {
+    min-height: 100vh;
+}
+
+#places-page .lugares .product-box {
+    width: 300px;
+    // height: 300px;
+}
+
+<<<<<<< HEAD
 /* PROJECT */
 
 #project{
@@ -206,4 +946,246 @@ background-color: green;
 margin: 15px 0;
 padding: 10px;
 text-align: right;
+=======
+#places-page .lugares .product-box .place-content {
+    height: 40%;
+}
+
+#places-page .lugares .product-box .place-content h3 {
+    font-size: 20px;
+}
+
+#places-page .lugares .product-box .image {
+    height: 100px;
+}
+
+.page-wrapper {
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    &:before {
+        content: attr(data-totalitems);
+        font-size: 12px;
+        font-weight: 600;
+        position: absolute;
+        top: -12px;
+        right: -12px;
+        background: #899f4a;
+        line-height: 24px;
+        padding: 0 5px;
+        height: 24px;
+        min-width: 24px;
+        color: white;
+        text-align: center;
+        border-radius: 24px;
+    }
+    &.shake {
+        animation: shakeCart .4s ease-in-out forwards;
+    }
+}
+
+@keyframes xAxis {
+    100% {
+        transform: translateX(calc(50vw - 105px));
+    }
+}
+
+@keyframes yAxis {
+    100% {
+        transform: translateY(calc(-50vh + 75px));
+    }
+}
+
+@keyframes shakeCart {
+    25% {
+        transform: translateX(6px)
+    }
+    50% {
+        transform: translateX(-4px);
+    }
+    75% {
+        transform: translateX(2px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+
+/*===================== Cart =====================*/
+
+.my-articles-page {
+    min-height: 100vh;
+}
+
+.my-articles-page h3 {
+    padding: 0;
+}
+
+#cart-products {
+    display: flex;
+    width: 100%;
+    height: 50px;
+    background-color: #899f4a;
+    margin: 15px 0;
+    padding: 10px 30px;
+}
+
+#cart-products h3 {
+    font-size: 20px;
+    margin-right: 18%;
+}
+
+.cart-prod {
+    display: flex;
+    width: 100%;
+    height: 50px;
+    background-color: rgba(246, 246, 246, 1.00);
+    margin: 15px 0;
+    padding: 10px 30px;
+}
+
+.cart-prod>div {
+    width: 25%;
+}
+
+.cart-prod-name {
+    display: inline-block;
+    font-size: 20px;
+}
+
+.cart-prod-price {
+    display: inline-block;
+}
+
+.cart-prod .qty {
+    width: 40px;
+}
+
+.cart-total {
+    width: 100%;
+    height: 50px;
+    // background-color: #f0684c;
+    margin: 15px 0;
+    padding: 10px;
+    text-align: right;
+}
+
+
+/*=================== My favorites =======================*/
+
+main.favorites-page {
+    min-height: 100vh;
+}
+
+.no-favorites {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 500px;
+}
+
+.no-favorites button:hover a {
+    color: white;
+}
+
+
+/*=================== My products =======================*/
+
+.my-products-page .btn-delineado {
+    padding: 5px 10px;
+}
+
+
+/*============================ My place ==================================*/
+
+.myplace {
+    padding: 20px;
+    width: 600px;
+    height: 450px;
+    box-sizing: border-box;
+    box-shadow: 0 0 3px black;
+    transition: all .3s ease;
+}
+
+.deletePlace {
+    margin-top: 20px;
+}
+
+.deletePlace:hover {
+    background-color: red;
+}
+
+
+/*============================ Edit place ========================*/
+
+#container-edit {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.product-content-edit {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 30px auto;
+}
+
+.product-content-edit img {
+    margin: 25px 0;
+}
+
+.product-content-edit input {
+    width: 100%;
+}
+
+
+/*=========================== Footer ===================================*/
+
+#footer {
+    background-color: rgba(0, 0, 0, 1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 120px;
+    color: white;
+    text-transform: uppercase;
+}
+
+#footer .copyright {
+    margin-left: 50px;
+}
+
+#footer .redes {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-right: 50px;
+}
+
+#footer .redes p {
+    margin: 0 10px;
+}
+
+#footer .redes a {
+    color: white;
+}
+
+#footer .redes i {
+    font-size: 30px;
+    margin: 0 10px;
+>>>>>>> tomi
 }

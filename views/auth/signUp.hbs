@@ -1,0 +1,47 @@
+<div id="sign-up-page">
+
+  <div class="banner">
+      <h3>Cómo funciona</h3>
+  </div>
+
+  <div id="signup-page-left">
+    <div class="foto1"></div>
+    <div class="container">
+      <h4><span>1.</span>Crea tu perfil</h4>
+      <h4><span>2.</span>{{info2}}</h4>
+      <h4><span>3.</span>{{info3}}</h4>
+    </div>
+    <div class="foto2"></div>
+  </div>
+
+  <div id="signup-form">
+    <div class="signup-form">
+      <h1>Unite como {{role}}</h1>
+
+      <form action="/auth/signup" method="post">
+        <label for="emailSU">Email:</label>
+          <input placeholder="Tu email" type="email" name="email" id="emailSU">
+        <br>
+        <label for="passwordSU">Contraseña:</label>
+          <input placeholder="Tu contraseña" type="password" name="password" id="passwordSU">
+        <input type="text" name="role" value="{{role}}" hidden>
+        <br>
+        {{#if errorMessage}}
+        <div class="error-message">{{errorMessage}}</div>
+        {{/if}}
+        <button type="submit">Unite como {{role}}</button>
+
+        <p> - o -</p>
+          <div class="auth-social">
+            <button class="google-btn"><a href="/auth/google">Unite con Google</a></button>
+            <button class="facebook-btn"><a href="/auth/facebook">Unite con Facebook</a></button>
+          </div>
+
+          <p style="cursor: pointer;" id="signup-login">Ya tenes una cuenta? Logueate</p>
+
+        
+
+      </form>
+    </div>
+  </div>
+</div>

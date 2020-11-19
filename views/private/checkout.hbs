@@ -1,0 +1,36 @@
+<main id="places-page" class="my-articles-page">
+
+  <div class="container  inner-page container-places">
+    <div class="titulo">
+      <h2>Mis Artículos</h2>
+      <a href="/private/profile">Mi perfil</a>
+    </div>
+    <hr>
+
+  <div id="cart-products">
+    <h3>Artículo</h3>
+    <h3>Precio</h3>
+    <h3>Cantidad</h3>
+  </div>
+
+  {{#each cart}}
+  <div class="cart-prod">
+    <div><h3 class="cart-prod-name">{{name}}</h3></div>
+    <div><p class="cart-prod-price">$ <span>{{price}}</span></p></div>
+    <div><input class="qty" name="qty" type="number" min="1" placeholder="1"></div>
+    <div><a href="/private/store/{{_id}}/delete"><i class="fas fa-trash-alt"></i></a></div> 
+  </div>
+
+  {{/each}}
+  <div class="cart-total">
+    <h4>Total: $<span id="total-cart">0</span></h4>
+    <button class="btn-delineado">Pagar</button>
+  </div>
+
+  <div>
+    <a href="/store">Comprar otros artículos</a>
+  </div>
+
+
+</div>
+</main>

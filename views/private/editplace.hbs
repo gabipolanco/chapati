@@ -1,0 +1,89 @@
+<div class="container inner-page">
+
+  <main id="places-page">
+
+  <div class="container  inner-page container-places">
+    <div class="titulo">
+      <h2>Editá tu lugar: {{name}}</h2>
+      <a href="/private/profile">Mi perfil</a>
+    </div>
+    <hr>
+
+  
+  <div class="product-content-edit">
+
+        <img height="200px" src="{{image}}" alt="{{name}}">
+
+
+    <form action="/private/place/{{_id}}/edit" method="POST" enctype="multipart/form-data">
+      <div class="form-group">
+      <input type="text" name="user" value="{{_id}}" hidden>
+      <label for="name">Nombre:</label>
+      <input type="text" name="name" id="name" value="{{name}}"> 
+      </div>
+
+      <div class="form-group">
+      <label for="location">Ubicacion:</label>
+      <input type="text" name="location" id="location" value="{{location}}"> 
+      </div>
+
+      <div class="form-group">
+      <label for="contact">Contacto:</label>
+      <input placeholder="(Email)" type="email" name="contact" id="contact" value="{{contact}}"> 
+      </div>
+
+      <div class="form-group">
+        <label for="help">Ayuda requerida (podés elegir más de una opción):</label>
+        <select class="form-control" multiple name="help" id="help">
+          <option value="construccion y mantenimiento">construccion y mantenimiento</option>
+          <option value="jardineria">jardineria</option>
+          <option value="residencias artisticas">residencias artisticas</option>
+        </select>
+ 
+      </div>
+
+      <div class="form-group">
+      <label for="minStay">Estadia minima:</label>
+      <input type="text" placeholder="2 semanas" name="minStay" id="minStay" value="{{minStay}}"> 
+      </div>
+
+      <div class="form-group">
+      <label for="inExchange">A cambio de:</label>
+      <input type="text" name="inExchange" id="inExchange" value="{{inExchange}}"> 
+      </div>
+
+      <div class="form-group">
+      <label for="availability">Disponibilidad (podés elegir más de una opción):</label>
+      <select class="form-control" multiple name="availability" id="availability">
+          <option value="enero">Enero</option>
+          <option value="febrero">Febrero</option>
+          <option value="marzo">Marzo</option>
+          <option value="abril">Abril</option>
+          <option value="mayo">Mayo</option>
+          <option value="junio">Junio</option>
+          <option value="julio">Julio</option>
+          <option value="agosto">Agosto</option>
+          <option value="septiembre">Septiembre</option>
+          <option value="octubre">Octubre</option>
+          <option value="noviembre">Noviembre</option>
+          <option value="diciembre">Diciembre</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+      <label for="image">Image:</label>
+      <input class="form-control" type="file" name="image" id="image">
+      
+      </div>
+
+       <div class="form-group">
+         <label for="description">Descripcion del lugar:</label>
+         <textarea class="form-control" name="description" id="description" cols="30" rows="10" value="{{description}}"></textarea>
+       </div>
+      <input class="btn btn-primary" type="submit" value="Editar mi lugar">
+    </form>
+    </form>
+  </div>
+  </div>
+  </main>
+</div>

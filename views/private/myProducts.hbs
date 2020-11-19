@@ -1,0 +1,55 @@
+<main id="places-page" class="my-products-page">
+
+  <div class="container  inner-page container-places">
+    <div class="titulo">
+      <h2>Mis Productos</h2>
+      <a href="/private/profile">Mi perfil</a>
+    </div>
+    <hr>
+
+    <div class="lugares">
+    {{#each productId}}
+      <div class="place-box product-box">
+        <div class="image">
+          <img src="{{picture}}" alt="{{name}}" height="100" width="auto">
+        </div>
+        <div class="place-content">
+          <h3>{{name}}</h3>
+          <p class='price'><span>Precio: </span>${{price}} (ARS)</p>
+          <p class="description">{{description}}</p>
+        </div>
+
+        <a href="/private/product/{{_id}}/edit"><button class='btn-delineado'>Editar</button></a>
+        <form action="/private/product/{{_id}}/delete" method="POST">
+                <button class='btn-delineado deletePlace' type="submit">Borrar</button>
+            </form>
+
+      </div>
+      {{/each}}
+    </div>
+  </div>
+</main>
+
+  <div class="product-content-edit">
+
+    <form action="/private/createproduct" method="POST" enctype="multipart/form-data">
+      <div class="form-group">
+      <input type="text" name="user" value="{{_id}}" hidden>
+      <label for="name">Nombre:</label>
+      <input class="form-control" type="text" name="name" id="name" value="{{name}}">    
+      </div>
+      <div class="form-group">
+      <label for="price">Precio:</label>
+      <input class="form-control" type="number" name="price" id="price" value="{{price}}">
+      </div>
+      <div class="form-group">
+      <label for="image">Imagen:</label>
+      <input class="form-control" type="file" name="image" id="image">
+      </div>
+      <div class="form-group">
+      <label for="description">Descripción:</label>
+      <textarea class="form-control" type="text" name="description" id="description" value="{{description}}"></textarea> 
+      </div>
+      <input class="btn btn-primary" type="submit" value="Crear nuevo producto">
+    </form>
+  </div>

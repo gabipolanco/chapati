@@ -22,8 +22,9 @@ exports.storeView = async(req, res, next) => {
 
 exports.placesView = async(req, res, next) => {
     try {
+        const user = req.user
         const places = await Place.find()
-        res.render('public/places', { places });
+        res.render('public/places', { places, user });
     } catch (err) {
         console.log(err)
     }

@@ -1,41 +1,114 @@
 <div class="container inner-page">
 
-<h2>Mi Lugar</h2>
+{{!--  --}}
 
-<div id='content'>
-    <section class='mainContent'>
-      <div class='productRow'>
-        {{#with placeId}}
-        <article class='myplace'>
-          <div><img src="{{this.image}}" alt="{{this.name}}" height="100" width="auto"></div>
+  <main id="places-page">
+
+  <div class="container  inner-page container-places">
+    <h2>Mi lugar</h2>
+    <hr>
+
+    <div class="lugares">
+     {{#with placeId}}
+      <div class="place-box">
+        <div class="image">
+          <img src="{{this.image}}" alt="{{this.name}}" height="100" width="auto">
+        </div>
+        <div class="place-content">
           <h3>{{this.name}}</h3>
-          <a href="/private/place/{{this._id}}/edit"><button class="editButton">Edit</button></a>
+          <h4 class="location">{{this.location}}</h4>
+          <a href="#"><small>Ver en el mapa</small></a>
+          <p class="description">{{this.availability}}</p>
+          <p class="description">{{this.help}}</p>
+          <p class="description">{{this.description}}</p>
+        </div>
+        <a href="/private/place/{{this._id}}/edit"><button class="btn-delineado">Editar lugar</button></a>
           <form action="/private/place/{{this._id}}/delete" method="POST">
-          <button class="deleteButton" type="submit">Delete place</button>
+          <button class="btn-delineado deletePlace" type="submit">Borrar lugar</button>
           </form> 
-        </article>
-        {{/with}}
-      </div>      
-    </section>
+      </div>
+     
+      {{/with}}
+      
+    </div>  
+
   </div>
+</main>
 
 {{#unless placeId}}
 
 <div class="product-content-edit">
-    <img src="{{picture}}" alt="">
+
+    <p>Completa el siguiente formulario con los datos de tu proyecto.
+      No te olvides de dejar un contacto para que l@s volunari@s se puedan 
+      contactar. Cuantos más detalles mejor. 
+    </p>
 
     <form action="/private/createplace" method="POST" enctype="multipart/form-data">
       <div class="form-group">
       <input type="text" name="user" value="{{_id}}" hidden>
-      <label for="name">Name:</label>
+      <label for="name">Nombre:</label>
       <input type="text" name="name" id="name" value="{{name}}"> 
       </div>
 
       <div class="form-group">
+      <label for="location">Ubicacion:</label>
+      <input type="text" name="location" id="location" value="{{location}}"> 
+      </div>
+
+      <div class="form-group">
+      <label for="contact">Contacto:</label>
+      <input placeholder="(Email)" type="email" name="contact" id="contact" value="{{contact}}"> 
+      </div>
+
+      <div class="form-group">
+        <label for="help">Ayuda requerida (podés elegir más de una opción):</label>
+        <select class="form-control" multiple name="help" id="help">
+          <option value="construccion y mantenimiento">construccion y mantenimiento</option>
+          <option value="jardineria">jardineria</option>
+          <option value="residencias artisticas">residencias artisticas</option>
+        </select>
+ 
+      </div>
+
+      <div class="form-group">
+      <label for="minStay">Estadia minima:</label>
+      <input type="text" placeholder="2 semanas" name="minStay" id="minStay" value="{{minStay}}"> 
+      </div>
+
+      <div class="form-group">
+      <label for="inExchange">A cambio de:</label>
+      <input type="text" name="inExchange" id="inExchange" value="{{inExchange}}"> 
+      </div>
+
+      <div class="form-group">
+      <label for="availability">Disponibilidad (podés elegir más de una opción):</label>
+      <select class="form-control" multiple name="availability" id="availability">
+          <option value="enero">Enero</option>
+          <option value="febrero">Febrero</option>
+          <option value="marzo">Marzo</option>
+          <option value="abril">Abril</option>
+          <option value="mayo">Mayo</option>
+          <option value="junio">Junio</option>
+          <option value="julio">Julio</option>
+          <option value="agosto">Agosto</option>
+          <option value="septiembre">Septiembre</option>
+          <option value="octubre">Octubre</option>
+          <option value="noviembre">Noviembre</option>
+          <option value="diciembre">Diciembre</option>
+        </select>
+      </div>
+
+      <div class="form-group">
       <label for="image">Image:</label>
-        <input class="form-control" type="file" name="image" id="image">
+      <input class="form-control" type="file" name="image" id="image">
       
       </div>
+
+       <div class="form-group">
+         <label for="description">Descripcion del lugar:</label>
+         <textarea class="form-control" name="description" id="description" cols="30" rows="10"></textarea>
+       </div>
       <input class="btn btn-primary" type="submit" value="Crear mi lugar">
     </form>
   </div>

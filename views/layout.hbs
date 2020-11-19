@@ -23,6 +23,7 @@
       <a href="/#project" id="proyecto">PROYECTO</a>
       <a href="/#testimonials" id="fundadores">CREADORES</a>
       <a href="/#volunteerings" id="voluntariados">PARTICIPA</a>
+      <a href="/places" id="comunidades">COMUNIDADES</a>
       <a href="/store" id="tienda">TIENDA</a>
       <a href="/#photos" id="fotos">FOTOS</a>
     </div>
@@ -44,13 +45,18 @@
               <img height="40" src="/images/shop.png" alt="">
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/private/profile">
+          <li id="profile-btn" class="nav-item">
+            <a class="nav-link" href="#">
               <img height="40" src="/images/login.png" alt="">
             </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/auth/logout">Log out</a>
+            <ul class="inner-menu">
+              <li class="nav-item">
+                <a class="nav-link" href="/private/profile">Mi perfil</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/auth/logout">Cerrar sesión</a>
+              </li>
+            </ul>
           </li>
           
           {{else}}

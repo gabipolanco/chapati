@@ -5,6 +5,7 @@
   <div id='content'>
     <section class='mainContent'>
       <div class='productRow'>
+        {{#if user}}
         {{#each products}}
           <article class='productInfo'> 
             <div><img alt='{{name}}' src='{{picture}}'></div>
@@ -12,16 +13,27 @@
             <p class="productName">{{name}}</p>
             <p class='productContent'>{{description}}</p>
 
-            {{#if user}}
-
             <form action="private/store/{{_id}}/add" method="GET">
             <button type='submit' class='buyButton'>Agregar al carrito</button>
             </form>
             
-            {{/if}}
           
           </article>
         {{/each}}
+
+        {{else}}
+
+        {{#each products}}
+          <article class='productInfo'> 
+            <div><img alt='{{name}}' src='{{picture}}'></div>
+            <p class='price'>${{price}}</p>
+            <p class="productName">{{name}}</p>
+            <p class='productContent'>{{description}}</p>            
+          
+          </article>
+        {{/each}}
+
+        {{/if}}
       </div>
       
     </section>

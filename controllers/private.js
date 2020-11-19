@@ -79,8 +79,8 @@ exports.myPlaceView = async(req, res, next) => {
 
 exports.createPlace = async(req, res) => {
     try {
-        const { user, name } = req.body
-        const newPlace = await Place.create({ name, image: req.file.path, ownerId: user })
+        const { user, name, location, contact, help, minStay, inExchange, availability, description } = req.body
+        const newPlace = await Place.create({ name, image: req.file.path, ownerId: user, location, contact, help, minStay, inExchange, availability, description })
         await User.findByIdAndUpdate(user, { placeId: newPlace._id }, { new: true })
         res.redirect('/private/myplace')
     } catch (err) {
@@ -101,13 +101,13 @@ exports.editPlaceView = async(req, res) => {
 exports.editPlace = async(req, res) => {
     try {
         const { id } = req.params
-        const { name, user } = req.body
+        const { name, user, location, contact, help, minStay, inExchange, availability, description } = req.body
         if (req.file) {
             const image = req.file.path
-            await Place.findByIdAndUpdate(id, { name, image, ownerId: user }, { new: false })
+            await Place.findByIdAndUpdate(id, { name, image, ownerId: user, location, contact, help, minStay, inExchange, availability, description }, { new: false })
             res.redirect('/private/myplace')
         } else {
-            await Place.findByIdAndUpdate(id, { name, ownerId: user }, { new: false })
+            await Place.findByIdAndUpdate(id, { name, ownerId: user, location, contact, help, minStay, inExchange, availability, description }, { new: false })
             res.redirect('/private/myplace')
         }
 

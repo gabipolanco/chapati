@@ -31,6 +31,19 @@ a:hover {
   font-size: 20px;
   z-index: 4; }
 
+.btn-delineado {
+  background-color: transparent;
+  border: 2px solid black;
+  color: black;
+  padding: 10px 50px;
+  font-weight: 500;
+  font-size: 20px;
+  transition: all .3s ease; }
+
+.btn-delineado:hover {
+  background-color: black;
+  color: white; }
+
 .titulo-seccion {
   font-weight: 500;
   font-size: 40px;
@@ -40,7 +53,7 @@ a:hover {
 /*===================== Sidebar Menu =====================*/
 #mySidenav a {
   position: absolute;
-  left: -100px;
+  left: -120px;
   transition: 0.3s;
   padding: 10px;
   width: 160px;
@@ -65,12 +78,16 @@ a:hover {
   top: 300px;
   background-color: #d3833E; }
 
-#tienda {
+#comunidades {
   top: 360px;
+  background-color: #899f4a; }
+
+#tienda {
+  top: 420px;
   background-color: #fee264; }
 
 #fotos {
-  top: 420px;
+  top: 480px;
   background-color: gray; }
 
 /*===================== Topbar Menu y Carousel =====================*/
@@ -269,8 +286,8 @@ h3 {
 /*=========================== Volunteering ==============================*/
 #volunteerings {
   background-color: #f1f1f1;
-  height: 100vh;
-  padding-top: 70px; }
+  min-height: 120vh;
+  padding: 70px 0; }
 
 .container-voluntering {
   display: flex;
@@ -307,7 +324,41 @@ h3 {
   background-color: white;
   color: black; }
 
+/*=============================== BANNER 2 =======================*/
+#banner2 {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 300px;
+  background-image: url("../images/banner2.jpg");
+  background-position: center -150px;
+  background-size: cover;
+  background-repeat: no-repeat; }
+
+#banner2 button {
+  border: 2px solid white;
+  text-transform: uppercase;
+  font-weight: bold;
+  background-color: transparent;
+  border-radius: 3px;
+  padding: 20px 30px;
+  width: 255px;
+  box-sizing: border-box;
+  transition: all .3s ease; }
+
+#banner2 button a {
+  color: white; }
+
+#banner2 button:hover {
+  background-color: white; }
+
+#banner2 button:hover a {
+  color: black; }
+
 /*=============================== fotos =============================*/
+#photos {
+  padding-top: 50px; }
+
 .container-photo {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -315,7 +366,8 @@ h3 {
   grid-gap: 10px;
   width: 1200px;
   margin: 0 auto;
-  padding-top: 10px; }
+  padding-top: 10px;
+  margin: 50px auto; }
 
 .grid {
   background-color: white; }
@@ -531,6 +583,58 @@ h3 {
   box-sizing: border-box;
   padding-top: 50px; }
 
+/*====================== COMUNIDADES ============================ */
+#places-page .lugares {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap; }
+
+#places-page .lugares .place-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 520px;
+  padding: 20px;
+  margin-bottom: 50px;
+  background-color: white;
+  border: 1px solid black; }
+
+#places-page .lugares .place-box .image {
+  display: flex;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 350px; }
+
+#places-page .lugares .place-box .image img {
+  height: 100%;
+  width: auto; }
+
+#places-page .lugares .place-box .place-content {
+  max-width: 90%;
+  padding-top: 20px; }
+
+#places-page .lugares .place-box .place-content h3 {
+  padding: 0;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #899f4a; }
+
+#places-page .lugares .place-box .place-content small {
+  text-decoration: underline;
+  cursor: pointer; }
+
+#places-page .lugares .place-box .place-content .description {
+  max-width: 480px; }
+
+#places-page .lugares .place-box a {
+  display: block;
+  margin: 0 auto; }
+
 /*====================== STORE ============================ */
 #store-header {
   font-family: ‘Montserrat’, sans-serif;
@@ -547,8 +651,7 @@ h3 {
 
 #content .mainContent {
   width: 100%;
-  text-align: center;
-  padding: 5%; }
+  text-align: center; }
 
 #content .mainContent .productRow {
   display: flex;
@@ -680,11 +783,17 @@ h3 {
 /*============================ My place ==================================*/
 .myplace {
   padding: 20px;
-  width: 300px;
-  height: 350px;
+  width: 600px;
+  height: 450px;
   box-sizing: border-box;
   box-shadow: 0 0 3px black;
   transition: all .3s ease; }
+
+.deletePlace {
+  margin-top: 20px; }
+
+.deletePlace:hover {
+  background-color: red; }
 
 /*============================ Edit ==================================*/
 #container-edit {

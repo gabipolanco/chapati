@@ -1,9 +1,54 @@
-<h2>Lugares</h2>
+<main id="places-page">
 
-{{#each places}}
-  <div>
-    <img src="{{image}}" alt="{{name}}" height="100" width="auto">
-    <h3>{{name}}</h3>
-    <a href="/places/{{_id}}"><button>Reservar voluntariado</button></a>
+  <div class="container  inner-page container-places">
+    <h2>Explora las comunidades</h2>
+    <hr>
+
+    <div class="lugares">
+    {{#if user}}
+    {{#each places}}
+      <div class="place-box">
+        <div class="image">
+          <img src="{{image}}" alt="{{name}}" height="100" width="auto">
+        </div>
+        <div class="place-content">
+          <h3>{{name}}</h3>
+          <h4 class="location">{{location}}</h4>
+          <a href="#"><small>Ver en el mapa</small></a>
+          <p class="help">Tipo de ayuda que necesitamos: {{help}}</p>
+          <p class="inExchange">Que damos a cambio: {{inExchange}}</p>
+          <p class="minStay">Estadia minima: {{minStay}}</p>
+          <p class="availability">Disponibilidad: {{availability}}</p>
+          <p class="description">{{description}}</p>
+        </div>
+        
+        <a href="mailto:{{contact}}"><button class="btn-delineado">Contactar host</button></a>
+     
+      </div>
+      {{/each}}
+
+      {{else}}
+
+      {{#each places}}
+      <div class="place-box">
+        <div class="image">
+          <img src="{{image}}" alt="{{name}}" height="100" width="auto">
+        </div>
+        <div class="place-content">
+          <h3>{{name}}</h3>
+          <h4 class="location">{{location}}</h4>
+          <a href="#"><small>Ver en el mapa</small></a>
+          <p class="description">{{description}}</p>
+        </div>
+        
+          <a href="/auth/signupbackpacker"><button class="btn-delineado">Log-in para más info</button></a>
+  
+     
+      </div>
+      {{/each}}
+
+       {{/if}}
+    </div>  
+
   </div>
-{{/each}}
+</main>

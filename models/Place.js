@@ -7,7 +7,21 @@ const placeSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'User'
     },
-    location: String
+    location: String,
+    contact: String,
+    help: {
+        type: [String],
+        enum: ['construccion y mantenimiento', 'jardineria', 'residencias artisticas']
+    },
+    minStay: String,
+    inExchange: {
+        type: [String]
+    },
+    availability: {
+        type: [String],
+        enum: ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre']
+    },
+    description: String
 })
 
 module.exports = model('Place', placeSchema)

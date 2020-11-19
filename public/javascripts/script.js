@@ -4,6 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const $uniteMenu = document.querySelector('#unite-btn .inner-menu')
     const $uniteBtn = document.querySelector('#unite-btn a')
+    const $profileMenu = document.querySelector('#profile-btn .inner-menu')
+    const $profileBtn = document.querySelector('#profile-btn a')
     const $loginPopUp = document.querySelector('#login-pop-up')
     const $loginBtn = document.querySelector('#login-btn')
 
@@ -15,6 +17,18 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 $loginPopUp.style.display = 'none'
                 return $uniteMenu.style.display = 'block'
+            }
+        }
+    }
+
+    if ($profileBtn) {
+        $profileBtn.onclick = (event) => {
+            event.preventDefault()
+            if ($profileMenu.style.display === 'block') {
+                return $profileMenu.style.display = 'none'
+            } else {
+                $loginPopUp.style.display = 'none'
+                return $profileMenu.style.display = 'block'
             }
         }
     }

@@ -1,6 +1,7 @@
 const bcrypt = require('bcrypt')
 const User = require('../models/User')
 const passport = require('../configs/passport')
+const { emailBienvenida } = require('../configs/nodemailer')
 
 exports.signUpHostView = (req, res, next) => {
     res.render('auth/signUp', { role: 'host', info2: 'Contectá con viajeros', info3: 'Comparte e intercambia' })
@@ -14,13 +15,13 @@ exports.signUpProcess = async(req, res) => {
     try {
         const { email, password, role } = req.body
         if (!email || !password) {
-            return res.render("auth/signupbackpacker", {
+            return res.render("auth/signUp", {
                 errorMessage: "Indicate email and password"
             })
         }
         const user = await User.findOne({ email })
         if (user) {
-            return res.render("auth/signupbackpacker", {
+            return res.render("auth/signUp", {
                 errorMessage: "Error"
             })
         }
@@ -31,6 +32,7 @@ exports.signUpProcess = async(req, res) => {
             password: hashPass,
             role
         })
+        await emailBienvenida(email)
         res.redirect("/")
     } catch (err) {
         console.log(err)

@@ -4,6 +4,7 @@ const LocalStrategy = require("passport-local").Strategy
 const GoogleStrategy = require("passport-google-oauth20").Strategy
 const FacebookStrategy = require("passport-facebook").Strategy
 const User = require("../models/User")
+const { emailBienvenida } = require('../configs/nodemailer')
 
 passport.use(
     new LocalStrategy({
@@ -61,7 +62,7 @@ passport.use(
                     googleId: profile.id,
                     email: profile.emails[0].value
                 })
-
+                await emailBienvenida(email)
                 done(null, newUser)
             } catch (err) {
                 console.log(err)

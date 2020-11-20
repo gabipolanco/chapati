@@ -62,7 +62,7 @@ passport.use(
                     googleId: profile.id,
                     email: profile.emails[0].value
                 })
-                await emailBienvenida(email)
+
                 done(null, newUser)
             } catch (err) {
                 console.log(err)

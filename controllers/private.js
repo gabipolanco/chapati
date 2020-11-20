@@ -196,7 +196,7 @@ exports.addProductToCart = async(req, res) => {
         const { id } = req.params
         const userId = req.user
         const { name, price } = await Product.findById(id)
-        await User.findByIdAndUpdate(userId, { $push: { cart: { name, price } } })
+        const user = await User.findByIdAndUpdate(userId, { $push: { cart: { name, price } } })
     } catch (err) {
         console.log(err)
     }
@@ -208,6 +208,33 @@ exports.deleteProductFromCart = async(req, res) => {
         const userId = req.user
         await User.findByIdAndUpdate(userId, { $pull: { cart: { _id: id } } })
         res.redirect('/private/mycart')
+    } catch (err) {
+        console.log(err)
+    }
+}
+
+exports.deleteAllProductFromCart = async(req, res) => {
+    try {
+        const userId = req.user
+        await User.findByIdAndUpdate(userId, { $unset: { cart: "" } })
+        res.redirect('/private/mycart')
+    } catch (err) {
+        console.log(err)
+    }
+}
+
+exports.buyProducts = async(req, res) => {
+    try {
+        let preference = {
+            items: [{
+                title: 'Mi carrito de compras',
+                unit_price: 100,
+                quantity: 1,
+            }]
+        }
+        await mercadopago.preferences.create(preference)
+        global.id = response.body.id
+        res.render('/private/checkout')
     } catch (err) {
         console.log(err)
     }

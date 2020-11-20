@@ -23,8 +23,15 @@
 
   {{/each}}
   <div class="cart-total">
-    <h4>Total: $<span id="total-cart">0</span></h4>
-    <button class="btn-delineado">Pagar</button>
+    <div>
+      <div data-toggle="tooltip" data-placement="left" title="Borrar todos"><a href="/private/store/deleteall"><i class="fas fa-trash-alt"></i></a></div> 
+      <h4>Total: $<span id="total-cart">0</span></h4>
+    </div>
+    <script
+      src="https://www.mercadopago.com.ar/integrations/v1/web-payment-checkout.js"
+      data-preference-id='<%= global.id %>'>
+    </script> 
+    {{!-- <button class="btn-delineado">Pagar</button> --}}
   </div>
 
   <div>

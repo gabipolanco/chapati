@@ -785,6 +785,17 @@ main.store-page .btn-delineado {
   padding: 10px;
   text-align: right; }
 
+.cart-total > div {
+  display: flex;
+  justify-content: flex-end; }
+
+.cart-total > div > div {
+  margin: 0 50px; }
+
+.cart-total > div > div i {
+  font-size: 25px;
+  color: red; }
+
 /*=================== My favorites =======================*/
 main.favorites-page {
   min-height: 100vh; }

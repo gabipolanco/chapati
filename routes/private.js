@@ -23,6 +23,8 @@ const {
     myCartView,
     addProductToCart,
     deleteProductFromCart,
+    deleteAllProductFromCart,
+    buyProducts,
     addFavorite,
     removeFavorite
 } = require('../controllers/private')
@@ -49,6 +51,8 @@ router.get('/profile', isAuth, ProfileView)
 router.get('/mycart', isAuth, myCartView)
 router.get('/store/:id/add', isAuth, addProductToCart)
 router.get('/store/:id/delete', isAuth, deleteProductFromCart)
+router.get('/store/deleteall', isAuth, deleteAllProductFromCart)
+router.get('/store/buy', isAuth, buyProducts)
 
 // FAVORITES page
 

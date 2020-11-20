@@ -978,6 +978,20 @@ main.store-page .btn-delineado {
     text-align: right;
 }
 
+.cart-total>div {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.cart-total>div>div {
+    margin: 0 50px;
+}
+
+.cart-total>div>div i {
+    font-size: 25px;
+    color: red;
+}
+
 
 /*=================== My favorites =======================*/
 

@@ -1,32 +1,51 @@
-# Bienvenido a Chapati
+# Bienvenid@ a Chapati - Welcome to Chapati
 
 ## Chapati es una web consciente que  promueve intercambios  de experiencias y productos desde una perspectiva autosuntables.
 Podran encontrar un espacio virtual para ofrecer y encontrar experiencias de voluntariados,así como comprar y vender productos de artesanales.
 
+## Chapati is a conscious website promoting exchange of experiences and products from a self-sustainable perspective.
+You will find a virtual space where to offer and find volunteer experiences, as well as to buy and sell craft products.
+
+### Developers
+
+[Gabriela Polanco](https://github.com/gabipolanco) & 
+[Tomi Scattini](https://github.com/Tomasscattini)
+
+### [Página web/Website](https://chapati-delta.herokuapp.com/)
 
 ### Host: 
 
-Usuario: host2@host.com
-Contraseña: host
+Usuario/User: host2@host.com
+Contraseña/Password: host
 
-### Viajero/Viajero:
+### Viajer@/Traveller:
 
-Usuario: voluntario@voluntario.com
-Contraseña: voluntario
+Usuario/User: voluntario@voluntario.com
+Contraseña/Password: voluntario
 
-Variables de entorno usadas:
+### Tecnologías/Technologies
 
-PORT= puerto local a conectar
+- NodeJS
+- Express
+- MongoDB
+- JavaScript
+- HTML
+- HBS
+- CSS
 
-ENV= development
+#### Variables de entorno usadas/Environment variables used:
 
-SESSION_SECRET= secreto de la sesion
+PORT
 
-DB= base da datos local
+ENV
 
-GOOGLE_ID= Id de google
+SESSION_SECRET
 
-GOOGLE_SECRET= Secreto de google
+DB= base da datos local/ local data base
+
+GOOGLE_ID
+
+GOOGLE_SECRET
 
 FACEBOOK_APP_ID
 
@@ -42,12 +61,6 @@ HOTMAIL_USER
 
 HOTMAIL_PASS
 
-MP_TOKEN
+MP_TOKEN= Mercadopago
 
-MP_PUBLIC_KEY
-
-
-
-Autores:
-Gabriela Polanco & 
-[Tomi Scattini](https://github.com/Tomasscattin)
+MP_PUBLIC_KEY= Mercadopago

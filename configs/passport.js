@@ -57,12 +57,10 @@ passport.use(
                 if (user) {
                     return done(null, user)
                 }
-
                 const newUser = await User.create({
                     googleId: profile.id,
                     email: profile.emails[0].value
                 })
-
                 done(null, newUser)
             } catch (err) {
                 console.log(err)

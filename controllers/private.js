@@ -2,6 +2,7 @@ const Place = require('../models/Place')
 const Product = require('../models/Product')
 const User = require('../models/User')
 const Volunteering = require('../models/Volunteering')
+const mercadopago = require('../configs/mercadopago')
 
 // ===========================HOST pages============================
 
@@ -185,6 +186,15 @@ exports.removeFavorite = async(req, res, next) => {
 exports.myCartView = async(req, res, next) => {
     try {
         const user = await User.findById(req.user)
+        res.render('private/cart', user)
+    } catch (err) {
+        console.log(err)
+    }
+}
+
+exports.checkoutView = async (req, res) => {
+    try {
+        const user = await User.findById(req.user)
         res.render('private/checkout', user)
     } catch (err) {
         console.log(err)
@@ -232,9 +242,9 @@ exports.buyProducts = async(req, res) => {
                 quantity: 1,
             }]
         }
-        await mercadopago.preferences.create(preference)
+        const response = await mercadopago.preferences.create(preference)
         global.id = response.body.id
-        res.render('/private/checkout')
+        res.render('/private/checkout', global.id)
     } catch (err) {
         console.log(err)
     }

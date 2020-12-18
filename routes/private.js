@@ -21,6 +21,7 @@ const {
     ProfileView,
     myVolunteeringsView,
     myCartView,
+    checkoutView,
     addProductToCart,
     deleteProductFromCart,
     deleteAllProductFromCart,
@@ -49,6 +50,7 @@ router.get('/profile', isAuth, ProfileView)
 // STORE pages
 
 router.get('/mycart', isAuth, myCartView)
+router.get('/checkout', isAuth, checkoutView)
 router.get('/store/:id/add', isAuth, addProductToCart)
 router.get('/store/:id/delete', isAuth, deleteProductFromCart)
 router.get('/store/deleteall', isAuth, deleteAllProductFromCart)

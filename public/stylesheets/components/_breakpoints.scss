@@ -1,0 +1,19 @@
+$largePhone: 480px;
+$tablet: 768px;
+$laptop: 1024px;
+$largeScreen: 1200px;
+
+@mixin responsive($breakpoint) {
+  @if $breakpoint == 'lg-phone'{
+     @media only screen and (min-width: $largePhone) { @content };
+    }
+  @if $breakpoint == 'tablet'{
+     @media only screen and (min-width: $tablet) { @content };
+    }
+  @if $breakpoint == 'laptop'{
+     @media only screen and (min-width: $laptop) { @content };
+    }
+  @if $breakpoint == 'lg-screen'{
+     @media only screen and (min-width: $largeScreen) { @content };
+    }
+};

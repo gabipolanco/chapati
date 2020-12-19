@@ -29,7 +29,6 @@
       <a href="/store" id="tienda">TIENDA</a>
       <a href="/#photos" id="fotos">FOTOS</a>
     </div>
-    <div style="margin-left:120px;"></div>
 
       
     <div class="container">
@@ -44,12 +43,12 @@
           
           <li class="nav-item">
             <a id="cart" class="cart nav-link" data-totalitems="0" href="/private/mycart">
-              <img height="40" src="/images/shop.png" alt="">
+              <img height="40" src="/images/shop.png" alt="" />
             </a>
           </li>
           <li id="profile-btn" class="nav-item">
             <a class="nav-link" href="#">
-              <img height="40" src="/images/login.png" alt="">
+              <img height="40" src="/images/login.png" alt="" />
             </a>
             <ul class="inner-menu">
               <li class="nav-item">
@@ -90,11 +89,11 @@
 
     <form action="/auth/login" method="post">
       <label for="email">Email:</label>
-      <input placeholder="Tu email" type="email" name="email" id="email">
-      <br>
+      <input placeholder="Tu email" type="email" name="email" id="email" />
+      <br />
       <label for="password">Contraseña:</label>
-      <input placeholder="Tu contraseña" type="password" name="password" id="password">    
-      <br>
+      <input placeholder="Tu contraseña" type="password" name="password" id="password" />    
+      <br/>
       {{#if errorMessage}}
       <div class="error-message">{{errorMessage}}</div>
       {{/if}}

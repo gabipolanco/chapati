@@ -1,3 +1,14 @@
+html {
+  font-size: 12px; }
+
+@media only screen and (min-width: 768px) {
+  html {
+    font-size: 14px; } }
+
+@media only screen and (min-width: 1024px) {
+  html {
+    font-size: 16px; } }
+
 body {
   font-family: 'Roboto', sans-serif;
   height: 100%;
@@ -51,10 +62,14 @@ a {
 
 .titulo-seccion {
   font-weight: 500;
-  font-size: 40px;
+  font-size: 2rem;
   text-transform: uppercase;
   text-align: center;
   padding: 50px 0; }
+
+@media only screen and (min-width: 480px) {
+  .titulo-seccion {
+    font-size: 2.5rem; } }
 
 #mySidenav a {
   position: absolute;
@@ -94,45 +109,19 @@ a {
   top: 480px;
   background-color: #8A6846; }
 
-/*===================== Topbar Menu y Carousel =====================*/
-.sb-link {
-  display: flex;
-  height: 50px;
-  align-content: center;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  color: #bb5555;
-  transition: all .3s ease; }
-
-.sb-link:hover,
-.sb-link:focus,
-.sb-link:active {
-  background: #f7f7f7; }
-
-View Compiled Resources .carousel-item {
-  height: 100vh;
-  min-height: 300px;
+.carousel-item {
   background: no-repeat center center scroll;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover; }
-
-.carousel-caption {
-  bottom: 380px; }
-
-.carousel-caption h5 {
-  font-size: 45px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-top: 25px; }
-
-.carousel-caption p {
-  width: 75%;
-  margin: auto;
-  font-size: 18px;
-  line-height: 1.9; }
+  .carousel-item .carousel-caption {
+    bottom: 40%; }
+    .carousel-item .carousel-caption h5 {
+      font-size: 2.8rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-top: 25px; }
 
 nav {
   background-color: rgba(0, 0, 0, 0.8); }
@@ -199,35 +188,40 @@ nav {
   color: #fff; }
 
 #project {
-  padding-top: 60px;
+  min-height: 100vh;
+  padding: 60px 0 120px 0;
   background-color: rgba(175, 167, 123, 0.3); }
   #project .titulo-seccion {
     text-align: center; }
-
-.basic-1 {
-  height: 600px;
-  padding-top: 50px; }
-  .basic-1 .text-container {
-    margin-bottom: 30rem; }
-  .basic-1 .image-container {
-    overflow: hidden;
-    border-radius: 0.25rem;
-    padding-bottom: 0px;
-    margin-left: 15%; }
-    .basic-1 .image-container img {
-      height: 450px;
-      margin: 300;
-      transition: all 0.3s; }
-    .basic-1 .image-container:hover img {
-      -moz-transform: scale(1.5);
-      -webkit-transform: scale(1.15);
-      transform: scale(1.15); }
-
-.projectext {
-  font-size: 20px;
-  text-align: justify;
-  white-space: pre-line;
-  font-family: sans-serif; }
+  #project .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-top: 50px; }
+    #project .container .text-container {
+      width: 100%;
+      padding: 40px; }
+      #project .container .text-container p {
+        font-size: 20px;
+        text-align: justify;
+        white-space: pre-line;
+        font-family: sans-serif; }
+    #project .container .image-container {
+      overflow: hidden;
+      border-radius: 0.25rem; }
+      #project .container .image-container img {
+        height: 450px;
+        transition: all 0.3s; }
+      #project .container .image-container:hover img {
+        -moz-transform: scale(1.5);
+        -webkit-transform: scale(1.15);
+        transform: scale(1.15); }
+  @media only screen and (min-width: 1024px) {
+    #project .container {
+      flex-direction: row; }
+      #project .container .text-container {
+        width: 50%; } }
 
 #testimonials {
   box-sizing: border-box;

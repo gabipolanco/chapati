@@ -1,0 +1,37 @@
+//=============================== fotos =============================
+
+#photos {
+  padding-top: 50px;
+}
+
+.container-photo {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  justify-items: center;
+  grid-gap: 10px;
+  width: 1200px;
+  margin: 0 auto;
+  padding-top: 10px;
+  margin: 50px auto 10px auto;
+}
+
+.grid {
+  background-color: white;
+}
+
+.pic {
+  width: 100%;
+  overflow: hidden;
+  background-color: #000;
+}
+
+.photos {
+  width: 100%;
+  height: auto;
+  transform: scale(1.15);
+  transition: transform 0.5s, opacity 0.5s;
+  &:hover {
+    opacity: 1;
+    transform: scale(1.03);
+  }
+}

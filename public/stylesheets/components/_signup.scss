@@ -1,0 +1,98 @@
+/*========================= SignUp ================================*/
+
+#sign-up-page {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#sign-up-page .banner {
+  width: 100%;
+  height: 500px;
+  background-image: url('../images/chicos.jpg');
+  background-position: center -150px;
+  padding-top: 170px;
+  margin-bottom: 50px;
+}
+
+#sign-up-page .banner h3 {
+  color: #AFA77B;
+  text-shadow: 1px 1px black;
+  font-size: 70px;
+  text-transform: uppercase;
+}
+
+#signup-page-left {
+  position: relative;
+  width: 50%;
+  height: 100vh;
+  padding-top: 100px;
+  // background-color: rgba(175, 167, 123, 0.3);s
+}
+
+#signup-page-left .container {
+  background-color: rgba(0, 0, 0, 0.9);
+  border-radius: 50%;
+  height: 480px;
+  width: 480px;
+  padding-top: 10px;
+}
+
+#signup-page-left .foto1,
+#signup-page-left .foto2 {
+  position: absolute;
+  height: 250px;
+  width: 250px;
+  border-radius: 50%;
+}
+
+#signup-page-left .foto1 {
+  background-image: url('../images/chapati25.jpg');
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  top: -10px;
+  right: -10px;
+}
+
+#signup-page-left .foto2 {
+  background-image: url('../images/chapati26.jpg');
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  bottom: 10px;
+  left: 10px;
+}
+
+#signup-page-left h4 {
+  color: white;
+  text-align: center;
+  margin: 45px 0;
+}
+
+#signup-page-left span {
+  color: #AFA77B;
+  text-shadow: 1px 1px black;
+  font-size: 70px;
+}
+
+#signup-form {
+  width: 50%;
+  height: 100vh;
+  padding: 120px 0 0 200px;
+}
+
+#signup-form .signup-form {
+  width: 500px;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+  opacity: .9;
+  z-index: 5;
+  padding: 60px 0;
+}
+
+#signup-form .signup-form h1 {
+  text-align: center;
+}

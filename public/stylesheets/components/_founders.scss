@@ -1,0 +1,48 @@
+//========================= Founders ==========================
+
+#testimonials {
+  box-sizing: border-box;
+  color: #000000;
+  padding-top: 80px;
+  padding-bottom: 200px;
+  align-items: center;
+}
+
+#founders-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .founder {
+    position: relative;
+    width: 200px;
+    height: 300px;
+    margin: 20px;
+  }
+  .founder-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    img {
+      width: auto;
+      height: 100%;
+    }
+  }
+  .founder-name {
+    padding: 10px;
+    position: absolute;
+    bottom: 140px;
+    right: 0px;
+    border-radius: 3px;
+    box-shadow: 0 0 2px -2px black;
+    background-color: white;
+    p {
+      margin: 0;
+      font-weight: 500;
+    }
+  }
+  .founder-description {
+    padding-top: 10px;
+    text-align: justify;
+  }
+}

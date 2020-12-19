@@ -1,0 +1,72 @@
+//============================ Global ==========================
+
+body {
+  font-family: 'Roboto', sans-serif;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
+a {
+  color: black;
+  &:hover {
+    text-decoration: none;
+    color: black;
+  }
+}
+
+.inner-page {
+  margin-top: 100px;
+  hr {
+    border: 1px solid black;
+  }
+  h3 {
+    text-align: left;
+  }
+}
+
+.btn {
+  background-color: #fee264;
+  box-shadow: 1px 1px 2px black;
+  height: 35px;
+  color: rgba(255, 255, 255, 1.00);
+  border-style: none;
+  font-size: 14px;
+}
+
+.btn-transparent {
+  color: black;
+  background-color: rgba(255, 255, 255, 0.3);
+  border: 1px solid black;
+  width: 170px;
+  padding: 10px 0;
+  font-weight: 500;
+  font-size: 20px;
+  z-index: 4;
+}
+
+.btn-delineado {
+  background-color: transparent;
+  border: 2px solid black;
+  color: black;
+  padding: 10px 50px;
+  font-weight: 500;
+  font-size: 20px;
+  transition: all .3s ease;
+  &:hover {
+    background-color: black;
+    color: white;
+  }
+}
+
+.titulo-seccion {
+  font-weight: 500;
+  font-size: 40px;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 50px 0;
+}
+
+

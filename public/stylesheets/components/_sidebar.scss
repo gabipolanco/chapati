@@ -1,0 +1,47 @@
+// ===================== Sidebar Menu =====================
+
+#mySidenav a {
+  position: absolute;
+  left: -120px;
+  transition: 0.3s;
+  padding: 10px;
+  width: 160px;
+  text-decoration: none;
+  font-size: 15px;
+  color: $color-text;
+  box-shadow: 1px 1px 2px $color-text;
+  border-radius: 0 5px 5px 0;
+  &:hover {
+    left: 0;
+  }
+}
+
+#proyecto {
+  top: 180px;
+  background-color: $color1;
+}
+
+#fundadores {
+  top: 240px;
+  background-color: $color2;
+}
+
+#voluntariados {
+  top: 300px;
+  background-color: $color3;
+}
+
+#comunidades {
+  top: 360px;
+  background-color: $color4;
+}
+
+#tienda {
+  top: 420px;
+  background-color: $color5;
+}
+
+#fotos {
+  top: 480px;
+  background-color: $color6;
+}

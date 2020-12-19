@@ -1,0 +1,16 @@
+//=================== My favorites =======================
+
+main.favorites-page {
+  min-height: 100vh;
+}
+
+.no-favorites {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 500px;
+  button:hover a {
+    color: white;
+  }
+}

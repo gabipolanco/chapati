@@ -1,0 +1,40 @@
+//=============================== PROJECT VIEW =======================
+
+#project {
+  padding-top: 60px;
+  background-color: rgba($color: #AFA77B, $alpha: 0.3);
+  .titulo-seccion {
+    text-align: center;
+  }
+}
+
+.basic-1 {
+  height: 600px;
+  padding-top: 50px;
+  .text-container {
+    margin-bottom: 30rem;
+  }
+  .image-container {
+    overflow: hidden;
+    border-radius: 0.25rem;
+    padding-bottom: 0px;
+    margin-left: 15%;
+    img {
+      height: 450px;
+      margin: 300;
+      transition: all 0.3s;
+    }
+    &:hover img {
+      -moz-transform: scale(1.5);
+      -webkit-transform: scale(1.15);
+      transform: scale(1.15);
+    }
+  }
+}
+
+.projectext {
+  font-size: 20px;
+  text-align: justify;
+  white-space: pre-line;
+  font-family: sans-serif;
+}

@@ -1,0 +1,30 @@
+//=========================== Footer ===================================
+
+#footer {
+  background-color: rgba(0, 0, 0, 1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 120px;
+  color: white;
+  text-transform: uppercase;
+  .copyright {
+    margin-left: 50px;
+  }
+  .redes {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-right: 50px;
+    p {
+      margin: 0 10px;
+    }
+    a {
+      color: white;
+    }
+    i {
+      font-size: 30px;
+      margin: 0 10px;
+    }
+  }
+}

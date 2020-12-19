@@ -1,0 +1,25 @@
+//============================ Edit place ========================
+
+#container-edit {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.product-content-edit {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 30px auto;
+}
+
+.product-content-edit img {
+  margin: 25px 0;
+}
+
+.product-content-edit input {
+  width: 100%;
+}

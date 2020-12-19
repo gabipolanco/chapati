@@ -1,0 +1,76 @@
+//========================= Login ================================
+
+#login-pop-up {
+  display: none;
+  position: fixed;
+  right: 50px;
+  top: 62.8px;
+  width: 500px;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+  opacity: .9;
+  z-index: 5;
+  padding: 20px 0;
+}
+
+#login-pop-up label,
+#signup-form .signup-form label {
+  width: 100%;
+  margin: 0 8%;
+}
+
+#login-pop-up input,
+#signup-form .signup-form input {
+  width: 84%;
+  margin: 10px 8%;
+}
+
+#login-pop-up p,
+#signup-form .signup-form p {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+#login-pop-up button,
+#signup-form .signup-form button {
+  position: relative;
+  width: 84%;
+  background-color: #AFA77B;
+  height: 35px;
+  color: rgba(255, 255, 255, 1.00);
+  border-style: none;
+  font-size: 14px;
+  margin: 20px 8%;
+}
+
+#auth-social,
+#signup-form .signup-form .auth-social {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#auth-social a,
+#signup-form .signup-form .auth-social a {
+  color: white;
+}
+
+#auth-social button,
+#signup-form .signup-form .auth-social button {
+  margin: 10px;
+}
+
+.google-btn {
+  background-color: #4285f4!important;
+  border-radius: 3px;
+}
+
+.facebook-btn {
+  background-color: #3b5998!important;
+  border-radius: 3px;
+}
